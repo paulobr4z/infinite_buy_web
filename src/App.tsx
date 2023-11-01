@@ -1,7 +1,10 @@
+import { Input } from './components/Input'
+import { FaUser } from 'react-icons/fa'
+
 function App() {
   return (
     <div>
-      <h1>home</h1>
+       <Input placeholder="Nome de usuário" Icon={FaUser} />
     </div>
   )
 }
