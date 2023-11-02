@@ -1,5 +1,6 @@
 import { BsCart4 } from 'react-icons/Bs'
 import * as S from './styled'
+import { Button } from '../Button'
 
 export const Header = () => {
   return (
@@ -11,12 +12,12 @@ export const Header = () => {
 
         <S.Pesquisa>
           <input type="text" />
-          <button>buscar</button>
+          <Button size="small">Buscar</Button>
         </S.Pesquisa>
 
         <S.Cart>
           <BsCart4 />
-          <span>R$9,99</span>
+          <span>5</span>
         </S.Cart>
       </div>
     </S.Header>
