@@ -7,16 +7,15 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
     line-height: 1.5;
-  }
-
-  html {
+    font-family: ${({ theme }) => theme.fonts.family.primary};
     font-size: 62.5%;
   }
+
+
 
   html, body {
     width: 100%;
     min-height: 100vh;
-    font-family: ${({ theme }) => theme.fonts.family.primary};
     -webkit-font-smoothing: antialiased;
     background-color: ${({ theme }) => theme.colors.white};
   }
