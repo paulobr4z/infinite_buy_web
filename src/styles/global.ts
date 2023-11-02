@@ -40,12 +40,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   ::-webkit-scrollbar {
-    width: 10px ;
+    width: 1rem ;
   }
 
 ::-webkit-scrollbar-thumb {
-width: 10px ;
+width: 1rem ;
 background-color: ${({ theme }) => theme.colors.black} ;
-border-radius: 6px;
+border-radius: 0.6rem;
 }
 `

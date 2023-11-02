@@ -1,5 +1,5 @@
-import { Header } from './components/Header'
+import { Banner } from './components/Banner'
 
 export const App = () => {
-  return <Header />
+  return <Banner />
 }
