@@ -31,16 +31,16 @@ export const theme: DefaultTheme = {
       primary: 'Roboto',
     },
     text: {
-      errorSize: '10px',
-      extraSmall: '12px',
-      small: '14px',
-      medium: '16px',
-      large: '18px',
+      errorSize: '1rem',
+      extraSmall: '1.2rem',
+      small: '1.4rem',
+      medium: '1.6rem',
+      large: '1.8rem',
     },
     header: {
-      small: '22px',
-      medium: '24px',
-      large: '28px',
+      small: '2.2rem',
+      medium: '2.4rem',
+      large: '2.8rem',
     },
 
     weight: {

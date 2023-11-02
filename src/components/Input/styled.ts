@@ -2,13 +2,13 @@ import { styled } from 'styled-components'
 
 export const InputContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 16px;
-  padding: 18px 26px;
+  border-radius: 1.6rem;
+  padding: 1.8rem 2.6rem;
   font-size: ${({ theme }) => theme.fonts.text.large};
   font-weight: ${({ theme }) => theme.fonts.weight.light};
   display: flex;
-  gap: 8px;
-  width: 480px;
+  gap: 0.8rem;
+  width: 48rem;
 
   input {
     border: none;
