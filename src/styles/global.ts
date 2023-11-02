@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     font-family: ${({ theme }) => theme.fonts.family.primary};
     -webkit-font-smoothing: antialiased;
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.white};
   }
 
   .container {
