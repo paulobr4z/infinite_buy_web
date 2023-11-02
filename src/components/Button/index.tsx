@@ -1,24 +1,26 @@
 import { ButtonHTMLAttributes } from 'react'
 import { ButtonContainer } from './styled'
 import { CircularSpinner } from '../CircularSpinner'
-import { IconType } from 'react-icons'
+// import { IconType } from 'react-icons'
+
+// TODO Verificar e apagar o icon
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size: 'small' | 'medium' | 'large'
   loading?: boolean
-  Icon: IconType
+  // Icon: IconType
 }
 
 export const Button = ({
   children,
   size,
   loading,
-  Icon,
+  // Icon,
   ...props
 }: ButtonProps) => {
   return (
     <ButtonContainer size={size} {...props}>
-      <Icon /> {loading ? <CircularSpinner /> : children}
+      {loading ? <CircularSpinner /> : children}
     </ButtonContainer>
   )
 }
