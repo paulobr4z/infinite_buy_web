@@ -15,6 +15,7 @@ const sizeToWidth = {
   medium: '195px',
   large: '480px',
 }
+// TODO mudar px para rem
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   border-radius: 4px;
