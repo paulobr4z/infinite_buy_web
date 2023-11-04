@@ -2,6 +2,7 @@ import { BsCart4 } from 'react-icons/Bs'
 import * as S from './styled'
 import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
+import { Search } from '../Search'
 
 export const Header = () => {
   return (
@@ -12,10 +13,7 @@ export const Header = () => {
             <img src="logo-02.png" alt="Logo" />
           </S.Logo>
 
-          <S.Pesquisa>
-            <input type="text" />
-            <Button size="small">Buscar</Button>
-          </S.Pesquisa>
+          <Search />
 
           <S.Cart>
             <BsCart4 />
