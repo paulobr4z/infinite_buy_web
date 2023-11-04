@@ -7,7 +7,6 @@ export const Header = styled.header`
 `
 
 export const Logo = styled.div``
-export const Pesquisa = styled.div``
 
 export const Cart = styled.button`
   svg {
