@@ -17,7 +17,7 @@ export const Cart = styled.button`
 
   span {
     position: absolute;
-    top: 18px;
+    top: 1.8rem;
     font-size: 1rem;
   }
 `

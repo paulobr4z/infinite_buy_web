@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, ReactNode } from 'react'
 import { IconType } from 'react-icons'
-import { InputContainer } from './styled'
+import * as S from './styled'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   Icon: IconType
@@ -9,10 +9,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Input: React.FC<InputProps> = ({ Icon, children, ...props }) => {
   return (
-    <InputContainer>
+    <S.InputContainer>
       <Icon />
       <input {...props} />
       {children}
-    </InputContainer>
+    </S.InputContainer>
   )
 }
