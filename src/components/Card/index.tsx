@@ -1,6 +1,7 @@
 import { CardProps } from '../../types'
 import { Button } from '../Button'
 import * as S from './styled'
+import { formatCurrency } from '../../utils/formatCurrency'
 
 export const Card = ({ cardData }: CardProps) => {
   return (
@@ -10,7 +11,7 @@ export const Card = ({ cardData }: CardProps) => {
           <img src={products?.images} alt={products?.name} />
           <div>
             <h2>{products?.name}</h2>
-            <p>${products?.price}</p>
+            <p>{formatCurrency(products?.price)}</p>
           </div>
 
           <Button size="medium">Comprar</Button>
