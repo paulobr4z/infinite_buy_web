@@ -4,3 +4,7 @@ export interface ProductsProps {
   images: string
   price: number
 }
+
+export interface CardProps {
+  cardData: ProductsProps[]
+}

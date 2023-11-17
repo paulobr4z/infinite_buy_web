@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { cardProducts } from '../../services'
 import { ProductsProps } from '../../types'
 import { Card } from '../Card'
+import * as S from './styled'
 
 export const CardContainer: React.FC = () => {
   const [products, setProducts] = useState<ProductsProps[]>([])
@@ -23,8 +24,10 @@ export const CardContainer: React.FC = () => {
   }, [])
 
   return (
-    <div>
-      <Card cardData={products} />
+    <div className="container">
+      <S.ContainerCard>
+        <Card cardData={products} />
+      </S.ContainerCard>
     </div>
   )
 }
