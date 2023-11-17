@@ -1,15 +1,20 @@
+import { ProductsProps } from '../../types'
+
 interface CardProps {
-  name: string
-  images: string
-  price: number
+  cardData: ProductsProps[]
 }
 
-export const Card: React.FC<CardProps> = ({ name, images, price }) => {
+export const Card = ({ cardData }: CardProps) => {
+  console.log('aquiiiiiiiiiii', cardData)
   return (
-    <div>
-      <img src={images} alt={name} />
-      <h2>{name}</h2>
-      <p>${price}</p>
-    </div>
+    <>
+      {cardData?.map((products) => (
+        <div key={products?._id}>
+          <img src={products?.images} alt={products?.name} />
+          <h2>{products?.name}</h2>
+          <p>${products?.price}</p>
+        </div>
+      ))}
+    </>
   )
 }
