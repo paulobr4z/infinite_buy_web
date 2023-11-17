@@ -5,21 +5,21 @@ export const CardContent = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  gap: 12px;
-  padding: 12px;
-  width: 224px;
-  height: 290px;
-  border-radius: 6px;
-  border: 1px solid #f4f4f4;
-  background: #fff;
-  box-shadow: 0px 4px 8px 0px rgba(99, 99, 99, 0.2);
+  gap: 1.2rem;
+  padding: 1.2rem;
+  width: 22.4rem;
+  height: 29rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid #f4f4f4;
+  background: ${({ theme }) => theme.colors.white};
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(99, 99, 99, 0.2);
 
   div {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    gap: 12px;
+    gap: 1.2rem;
   }
 
   img {
@@ -28,16 +28,16 @@ export const CardContent = styled.div`
   }
 
   h2 {
-    color: #000;
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 14px;
+    color: ${({ theme }) => theme.colors.text.primaryAccent};
+    font-family: ${({ theme }) => theme.fonts.family.primary};
+    font-weight: ${({ theme }) => theme.fonts.weight.light};
+    font-size: ${({ theme }) => theme.fonts.text.small};
   }
 
   p {
-    color: #000;
-    font-family: Roboto;
-    font-weight: 700;
-    font-size: 16px;
+    color: ${({ theme }) => theme.colors.text.primaryAccent};
+    font-family: ${({ theme }) => theme.fonts.family.primary};
+    font-weight: ${({ theme }) => theme.fonts.weight.bold};
+    font-size: ${({ theme }) => theme.fonts.text.medium};
   }
 `
