@@ -9,3 +9,5 @@ export const cardProducts = async () => {
     console.log(error)
   }
 }
+
+// TODO Revisar ´pra ver se realmente vamos precisar
