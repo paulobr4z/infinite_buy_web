@@ -1,33 +1,100 @@
 import { useEffect, useState } from 'react'
-import { cardProducts } from '../../services'
 import { ProductsProps } from '../../types'
 import { Card } from '../Card'
 import * as S from './styled'
+import { getProductsPaginated } from '../../services/apiGet'
+import { CircularSpinner } from '../CircularSpinner'
+import { Pagination } from '../Pagination'
+
+export interface PaginationProps {
+  currentPage: number
+  previousPage: number | null
+  nextPage: number | null
+  perPage: number
+  totalPages: number
+  totalItems: number
+}
 
 export const CardContainer: React.FC = () => {
   const [products, setProducts] = useState<ProductsProps[]>([])
-  console.log(products)
+  const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [pagination, setPagination] = useState<PaginationProps>(
+    {} as PaginationProps,
+  )
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await cardProducts()
+  const [pageArray, setPageArray] = useState<number[]>([1])
 
-        setProducts(response.data)
-        console.log('response', response)
-      } catch (error) {
-        console.error('Error fetching card data:', error)
-      }
+  const slice = (pageArray2: number[]) => {
+    const windowSize = 5
+    const halfWindowSize = Math.floor(windowSize / 2)
+
+    if (currentPage <= halfWindowSize) {
+      return pageArray2.slice(0, windowSize)
     }
 
-    fetchData()
-  }, [])
+    if (currentPage >= pagination.totalPages - halfWindowSize) {
+      return pageArray2.slice(-windowSize)
+    }
+
+    return pageArray2.slice(
+      currentPage - halfWindowSize - 1,
+      currentPage + halfWindowSize,
+    )
+  }
+
+  const getPaginated = async () => {
+    try {
+      setLoading(true)
+
+      const response = await getProductsPaginated({
+        page: currentPage,
+        perPage: 15,
+      })
+
+      setPagination(response.pagination)
+      setProducts(response.data)
+      setPageArray(
+        slice(
+          Array.from(
+            { length: response.pagination.totalPages },
+            (_, i) => i + 1,
+          ),
+        ),
+      )
+    } catch (error) {
+      console.error('Erro ao buscar dados:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getPaginated()
+  }, [currentPage])
 
   return (
     <div className="container">
-      <S.ContainerCard>
-        <Card cardData={products} />
-      </S.ContainerCard>
+      <S.TitleCards>Todos os Produtos</S.TitleCards>
+
+      {loading ? (
+        <S.Loading>
+          <CircularSpinner />
+        </S.Loading>
+      ) : (
+        <>
+          <S.ContainerCard>
+            <Card cardData={products} />
+          </S.ContainerCard>
+
+          <Pagination
+            currentPage={currentPage}
+            pageArray={pageArray}
+            setCurrentPage={setCurrentPage}
+            pagination={pagination}
+          />
+        </>
+      )}
     </div>
   )
 }
