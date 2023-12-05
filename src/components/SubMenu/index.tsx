@@ -1,6 +1,6 @@
 import { RxHamburgerMenu } from 'react-icons/Rx'
 import * as S from './styled'
-import { ButtonCategorie } from '../ButtonCategorie/ButtonCategorie'
+import { ButtonCategorie } from '../ButtonCategorie'
 
 export const SubMenu = () => {
   return (
