@@ -21,13 +21,13 @@ export const Banner = () => {
   }, [])
 
   return (
-    <S.BannerContainer>
-      <div className="container">
+    <div className="container">
+      <S.BannerContainer>
         <img
           src={promotionImages[currentPromotionIndex]}
           alt={`Promoção ${currentPromotionIndex + 1}`}
         />
-      </div>
-    </S.BannerContainer>
+      </S.BannerContainer>
+    </div>
   )
 }
