@@ -75,14 +75,13 @@ export const CardContainer: React.FC = () => {
 
   return (
     <div className="container">
-      <S.TitleCards>Todos os Produtos</S.TitleCards>
-
       {loading ? (
         <S.Loading>
           <CircularSpinner />
         </S.Loading>
       ) : (
         <>
+          <S.TitleCards>Todos os Produtos</S.TitleCards>
           <S.ContainerCard>
             <Card cardData={products} />
           </S.ContainerCard>
