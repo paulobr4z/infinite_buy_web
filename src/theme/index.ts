@@ -13,6 +13,7 @@ export const theme: DefaultTheme = {
     white: '#FEFEFE',
     button: {
       disabled: '#6f6464',
+      categorie: '#0E3C1F',
     },
     iconColor: '#000',
 

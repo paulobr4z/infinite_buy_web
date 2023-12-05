@@ -22,10 +22,12 @@ export const Banner = () => {
 
   return (
     <S.BannerContainer>
-      <img
-        src={promotionImages[currentPromotionIndex]}
-        alt={`Promoção ${currentPromotionIndex + 1}`}
-      />
+      <div className="container">
+        <img
+          src={promotionImages[currentPromotionIndex]}
+          alt={`Promoção ${currentPromotionIndex + 1}`}
+        />
+      </div>
     </S.BannerContainer>
   )
 }

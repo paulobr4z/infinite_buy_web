@@ -20,10 +20,16 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.white};
   }
 
+  img {
+  max-width: 90%;
+  height: auto;
+}
+
   .container {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 5rem;
   }
   
   button {
