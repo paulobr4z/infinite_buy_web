@@ -9,15 +9,30 @@ export const Header = styled.header`
 export const Logo = styled.div``
 
 export const Cart = styled.button`
+  position: relative;
   svg {
     font-size: 3rem;
-    position: relative;
+    color: #00988d;
   }
+`
+
+export const NumberContentCart = styled.div`
+  border-radius: 200px;
+  border: 1px solid #fff;
+  background: #00988d;
+  display: flex;
+  width: 13.5px;
+  height: 13.5px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
 
   span {
-    position: absolute;
-    top: 1.8rem;
-    font-size: 1rem;
+    color: #fff;
+    font-size: 5px;
   }
 `
 
