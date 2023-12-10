@@ -1,4 +1,4 @@
-import { BsCart4 } from 'react-icons/Bs'
+import { PiShoppingCartFill } from 'react-icons/pi'
 import * as S from './styled'
 import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
@@ -15,9 +15,13 @@ export const Header = () => {
 
           <Search />
 
+          <Button size="small">Entrar</Button>
+
           <S.Cart>
-            <BsCart4 />
-            <span>5</span>
+            <PiShoppingCartFill />
+            <S.NumberContentCart>
+              <span>5</span>
+            </S.NumberContentCart>
           </S.Cart>
         </S.ContentHeader>
         <S.ContentSubMenu>
