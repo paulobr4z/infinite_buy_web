@@ -1,31 +1,32 @@
-# Infinity By
+# Infinity Buy
 
-Bem-vindo ao Infinity By.
+Bem-vindo ao Infinity Buy.
 
 
 ## Documentação
 
 - [Documentação](#)
 - [Status do Projeto](#status-do-projeto)
-- [Descrição do Projeto](#sobre-o-projeto)
+- [Descrição do Projeto](#descrição-do-projeto)
 - [Funcionalidades](#funcionalidades)
-- [Guia de Padronização](#guia-de-padronizacao)
+- [Guia de Padronização](#guia-de-padronização)
 - [Design System](#design-system)
 - [Tecnologias Principais](#tecnologias-principais)
 - [Bibliotecas de Apoio](#bibliotecas-de-apoio)
 - [Ferramentas](#ferramentas)
 - [Aplicação](#aplicação)
-- [Desenvolvedor](#desenvolvedor)
-- [Executando o projeto localmente](#executando-o-projeto-localmente)
+- [Desenvolvedores](#desenvolvedores)
+- [Executando o Projeto API Localmente](#executando-o-projeto-api-localmente)
+- [Executando o Projeto WEB Localmente](#executando-o-projeto-web-localmente)
 
 
 ## Status do Projeto
 
       Projeto em construção
 
-##  Descrição do projeto
+##  Descrição do Projeto
 
- O Infinity By é um sistema de e-commerce voltado inicialmente para supermercados. Ele proporciona aos usuários a experiência de realizar compras online, explorar produtos e aproveitar ofertas, tanto para usuários logados quanto para visitantes não autenticados. Os usuários não autenticados têm a capacidade de visualizar produtos e ofertas, enquanto os usuários autenticados podem realizar compras, adicionar itens ao carrinho e finalizar suas transações.
+ O Infinity Buy é um sistema de e-commerce voltado inicialmente para supermercados. Ele proporciona aos usuários a experiência de realizar compras online, explorar produtos e aproveitar ofertas, tanto para usuários logados quanto para visitantes não autenticados. Os usuários não autenticados têm a capacidade de visualizar produtos e ofertas, enquanto os usuários autenticados podem realizar compras, adicionar itens ao carrinho e finalizar suas transações.
 
 
 ## Funcionalidades
@@ -35,11 +36,6 @@ Bem-vindo ao Infinity By.
    #### Autenticação:
 
          Em Produção!
-
-   ### 🔒 Área do Usuário logado (Consumidor):
-
-         Em Produção !
-
    #### Home:
 
    - Menu do usuário
@@ -49,13 +45,22 @@ Bem-vindo ao Infinity By.
    - Lista de produtos 
    - Menu de categorias de produtos
 
-   #### Carrinho:
-
-         Em Produção !
 
    #### Página de Detalhes do Produto:
 
          Em Produção !
+
+   ### 🔒 Área do Usuário logado (Consumidor):
+
+         Em Produção !
+
+
+
+   #### Carrinho:
+
+         Em Produção !
+
+   
 
 
 ## Guia de Padronização
@@ -71,7 +76,7 @@ Bem-vindo ao Infinity By.
 - Tipagem de props deve seguir o padrao ComponentNameProps;
 - Todos os arquivos deverão estar nas suas devidas pastas, conforme está estruturado o repositório;
 - Todo o código-fonte deve ser escrito em inglês. Isso inclui nomes de variáveis, funções, classes, etc;
-- Todos os commits devem seguir a  convenção de commits semânticos no tempo presente, ex: "adiciona tal funcionalidade";
+
 
 
 ## Design System
@@ -109,65 +114,68 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 ## Aplicação
 
-### Telas de Desktop
+### Telas 
 
-<p align="center">
-  <img src="src/assets/gif/aluroni.gif" alt="Imagem exibindo a versão desktop  do site" width="350">
-</p>
+      Em Produção.
+
+<!-- <p align="center">
+  <img src="" alt="" width="350">
+</p> -->
 
 
 
-👩‍💻 Desenvolvedores
+## Desenvolvedores
 <table align="center">
    <tr>
     <td align="center">
       <div>
-        <img src="https://media.licdn.com/dms/image/D4D03AQGdtah92H0PvA/profile-displayphoto-shrink_200_200/0/1688405693654?e=1700092800&v=beta&t=8K1bD7bMKHb7C12qVE4w0msU6-sS6RbxgNavbfpPYhw" width="120px;" alt="Foto de Carolina"/><br>
-          <b> Carolina Alves Ribeiro </b><br>
-          <b> Desenvolvedora Web Frontend / Head de Design </b><br>
-            <a href="https://www.linkedin.com/in/carolinaalvesribeiro/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
-
-
-  </tr>
+        <img src="https://avatars.githubusercontent.com/u/114251625?s=96&v=4" width="120px;" alt="Foto de Karine"/><br>
+          <b> Karine Pereira da Silva </b><br>
+          <b> Desenvolvedora Web Frontend </b><br>
+            <a href="https://www.linkedin.com/in/devkarine/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
+            <a href="https://github.com/devkarine" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
   </tr>
-
-  <tr>
-    <td align="center">
-      <div>
-         <img src="https://media.licdn.com/dms/image/D4D03AQHUjJ6lDYidWQ/profile-displayphoto-shrink_200_200/0/1675764205773?e=1700092800&v=beta&t=H5aB40KWbWU4viS4aogoYN7zwXGeBqBLO1sunYnVw5g" width="120px;" alt="Foto de Jefferson"/><br>
-          <b> Francisco Jefferson Ferreira de Lima </b><br>
-          <b> Desenvolvedor Web Frontend / Tech Lead </b><br>
-            <a href="https://www.linkedin.com/in/devkarine/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
-
-
 
   </tr>
 
   <tr>
     <td align="center">
       <div>
-        <img src="https://media.licdn.com/dms/image/D4E03AQHOaaPMmL8djQ/profile-displayphoto-shrink_200_200/0/1678845688632?e=1700092800&v=beta&t=-5RN1UbL6IlJXUkxN8SEmHXTu7TDS-c8tin7T7NkyJU" width="120px;" alt="Foto de Karine"/><br>
-          <b> Karine Pereira </b><br>
-          <b> Desenvolvedora Web Frontend / P.O. </b><br>
-            <a href="https://www.linkedin.com/in/jefferson-lima-40189525b/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
+         <img src="https://avatars.githubusercontent.com/u/110488969?v=4" width="120px;" alt="Foto de Kelvin"/><br>
+          <b>Kelvin Charles da Cruz</b><br>
+          <b> Desenvolvedor Web Frontend</b><br>
+            <a href="https://www.linkedin.com/in/kelvin-charles/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
+         <a href="https://github.com/kelvincharlesdev" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
+
+  </tr>
+
+  <tr>
+    <td align="center">
+      <div>
+        <img src="https://avatars.githubusercontent.com/u/52705622?v=4" width="120px;" alt="Foto de PaULO"/><br>
+          <b> Paulo Braz</b><br>
+          <b> Desenvolvedora Web Frontend / Backend. </b><br>
+            <a href="https://www.linkedin.com/in/paulobr4z/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
+             <a href="https://github.com/paulobr4z" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
   </tr>
 
 </table>
 
-## Executando o projeto localmente
 
-> Projeto iniciado usando npm craete-react-app.
+## Executando o projeto api localmente
+
+> Projeto iniciado usando npm create vite@latest.
 
 - Clone o projeto com
 
-  > git clone https://github.com/kelvincharlesdev/aluroni.git
+  > git clone https://github.com/paulobr4z/infinite_buy_api.git
 
 - Vá para a raiz do diretório
 
-  > cd aluroni
+  > cd infinite_buy_api
 
 - Instale as dependências
 
@@ -175,7 +183,30 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 - Inicie o servidor local
 
-  > npm start
+  > npm run dev
+
+
+
+
+## Executando o projeto web localmente
+
+> Projeto iniciado usando npm create vite@latest.
+
+- Clone o projeto com
+
+  > git clone https://github.com/paulobr4z/infinite_buy_web.git
+
+- Vá para a raiz do diretório
+
+  > cd infinite_buy_web
+
+- Instale as dependências
+
+  > npm install
+
+- Inicie o servidor local
+
+  > npm run dev
 
 - Analisar erros padrões com ESLint
 
