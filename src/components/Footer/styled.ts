@@ -6,6 +6,13 @@ export const Footer = styled.footer`
   .container {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 700px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
   }
 `
 export const List = styled.ul`

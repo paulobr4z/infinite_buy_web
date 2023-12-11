@@ -15,6 +15,7 @@ export const Loading = styled.div`
 
 export const ContainerCard = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 5rem;
   margin-top: 2.4rem;
