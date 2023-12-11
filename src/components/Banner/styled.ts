@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { MobileBreakPoint } from '../../const/breackPoint'
 
 export const BannerContainer = styled.div`
   display: flex;
@@ -9,6 +10,14 @@ export const BannerContainer = styled.div`
 
   img {
     width: 100%;
-    height: 30rem;
+    max-height: 30rem;
+  }
+
+  @media (max-width: ${MobileBreakPoint}) {
+    margin-top: 2.5rem;
+    img {
+      max-height: 20rem;
+      height: 10rem;
+    }
   }
 `
