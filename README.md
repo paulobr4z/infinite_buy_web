@@ -2,7 +2,6 @@
 
 Bem-vindo ao Infinity Buy.
 
-
 ## Documentação
 
 - [Documentação](#)
@@ -19,49 +18,42 @@ Bem-vindo ao Infinity Buy.
 - [Executando o Projeto API Localmente](#executando-o-projeto-api-localmente)
 - [Executando o Projeto WEB Localmente](#executando-o-projeto-web-localmente)
 
-
 ## Status do Projeto
 
       Projeto em construção
 
-##  Descrição do Projeto
+## Descrição do Projeto
 
- O Infinity Buy é um sistema de e-commerce voltado inicialmente para supermercados. Ele proporciona aos usuários a experiência de realizar compras online, explorar produtos e aproveitar ofertas, tanto para usuários logados quanto para visitantes não autenticados. Os usuários não autenticados têm a capacidade de visualizar produtos e ofertas, enquanto os usuários autenticados podem realizar compras, adicionar itens ao carrinho e finalizar suas transações.
-
+O Infinity Buy é um sistema de e-commerce voltado inicialmente para supermercados. Ele proporciona aos usuários a experiência de realizar compras online, explorar produtos e aproveitar ofertas, tanto para usuários logados quanto para visitantes não autenticados. Os usuários não autenticados têm a capacidade de visualizar produtos e ofertas, enquanto os usuários autenticados podem realizar compras, adicionar itens ao carrinho e finalizar suas transações.
 
 ## Funcionalidades
 
-   ### 🔓 Área de Usuários não Logados:
+### 🔓 Área de Usuários não Logados:
 
-   #### Autenticação:
+#### Autenticação:
 
          Em Produção!
-   #### Home:
 
-   - Menu do usuário
-   - Barra de pesquisa
-   - Ícone para o carrinho de compras
-   - Banner de promoções
-   - Lista de produtos 
-   - Menu de categorias de produtos
+#### Home:
 
+- Menu do usuário
+- Barra de pesquisa
+- Ícone para o carrinho de compras
+- Banner de promoções
+- Lista de produtos
+- Menu de categorias de produtos
 
-   #### Página de Detalhes do Produto:
-
-         Em Produção !
-
-   ### 🔒 Área do Usuário logado (Consumidor):
+#### Página de Detalhes do Produto:
 
          Em Produção !
 
-
-
-   #### Carrinho:
+### 🔒 Área do Usuário logado (Consumidor):
 
          Em Produção !
 
-   
+#### Carrinho:
 
+         Em Produção !
 
 ## Guia de Padronização
 
@@ -76,8 +68,6 @@ Bem-vindo ao Infinity Buy.
 - Tipagem de props deve seguir o padrao ComponentNameProps;
 - Todos os arquivos deverão estar nas suas devidas pastas, conforme está estruturado o repositório;
 - Todo o código-fonte deve ser escrito em inglês. Isso inclui nomes de variáveis, funções, classes, etc;
-
-
 
 ## Design System
 
@@ -95,7 +85,6 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 [![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [![css](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)](https://styled-components.com//)
 
-
 ## Bibliotecas de Apoio
 
     axios": 1.5.1
@@ -105,16 +94,16 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
     react-responsive": 9.0.2
     react-router-dom": 6.17.0
     styled-components": 6.1.0
- 
 
 ## Ferramentas
+
       - NPM
       - Git
       - Gitflow
 
 ## Aplicação
 
-### Telas 
+### Telas
 
       Em Produção.
 
@@ -122,9 +111,8 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
   <img src="" alt="" width="350">
 </p> -->
 
-
-
 ## Desenvolvedores
+
 <table align="center">
    <tr>
     <td align="center">
@@ -148,7 +136,6 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
             <a href="https://www.linkedin.com/in/kelvin-charles/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
          <a href="https://github.com/kelvincharlesdev" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
-
   </tr>
 
   <tr>
@@ -163,7 +150,6 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
   </tr>
 
 </table>
-
 
 ## Executando o projeto api localmente
 
@@ -184,9 +170,6 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 - Inicie o servidor local
 
   > npm run dev
-
-
-
 
 ## Executando o projeto web localmente
 
