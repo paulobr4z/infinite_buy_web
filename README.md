@@ -14,9 +14,12 @@ Bem-vindo ao Infinity Buy.
 - [Bibliotecas de Apoio](#bibliotecas-de-apoio)
 - [Ferramentas](#ferramentas)
 - [Aplicação](#aplicação)
+- [Deploy](#deploy)
 - [Desenvolvedores](#desenvolvedores)
-- [Executando o Projeto API Localmente](#executando-o-projeto-api-localmente)
 - [Executando o Projeto WEB Localmente](#executando-o-projeto-web-localmente)
+- [Deixe Sujestões e Idéias](#deixe-sujestões-e-idéias)
+
+
 
 ## Status do Projeto
 
@@ -103,13 +106,17 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 ## Aplicação
 
-### Telas
+## Telas
 
       Em Produção.
 
 <!-- <p align="center">
   <img src="" alt="" width="350">
 </p> -->
+
+## Deploy
+
+ > 
 
 ## Desenvolvedores
 
@@ -143,7 +150,7 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
       <div>
         <img src="https://avatars.githubusercontent.com/u/52705622?v=4" width="120px;" alt="Foto de PaULO"/><br>
           <b> Paulo Braz</b><br>
-          <b> Desenvolvedora Web Frontend / Backend. </b><br>
+          <b> Desenvolvedor Web Fullstack. </b><br>
             <a href="https://www.linkedin.com/in/paulobr4z/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
              <a href="https://github.com/paulobr4z" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
@@ -151,25 +158,7 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 </table>
 
-## Executando o projeto api localmente
 
-> Projeto iniciado usando npm create vite@latest.
-
-- Clone o projeto com
-
-  > git clone https://github.com/paulobr4z/infinite_buy_api.git
-
-- Vá para a raiz do diretório
-
-  > cd infinite_buy_api
-
-- Instale as dependências
-
-  > npm install
-
-- Inicie o servidor local
-
-  > npm run dev
 
 ## Executando o projeto web localmente
 
@@ -198,3 +187,14 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 - Formata código corretamente
 
   > npm run format
+
+  
+
+## Deixe Sujestões e Idéias
+
+    -
+    -
+    -
+    -
+
+
