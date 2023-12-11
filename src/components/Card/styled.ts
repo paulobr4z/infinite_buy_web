@@ -32,6 +32,9 @@ export const CardContent = styled.div`
     font-family: ${({ theme }) => theme.fonts.family.primary};
     font-weight: ${({ theme }) => theme.fonts.weight.light};
     font-size: ${({ theme }) => theme.fonts.text.small};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   p {
