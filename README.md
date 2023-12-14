@@ -116,7 +116,7 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 ## Deploy
 
- > 
+ > https://infinite-buy.vercel.app/
 
 ## Desenvolvedores
 
