@@ -1,4 +1,4 @@
-import { RxHamburgerMenu } from 'react-icons/Rx'
+import { RxHamburgerMenu } from 'react-icons/rx'
 import * as S from './styled'
 import { ButtonCategorie } from '../ButtonCategorie'
 
