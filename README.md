@@ -17,7 +17,7 @@ Bem-vindo ao Infinity Buy.
 - [Deploy](#deploy)
 - [Desenvolvedores](#desenvolvedores)
 - [Executando o Projeto WEB Localmente](#executando-o-projeto-web-localmente)
-- [Deixe Sujestões e Idéias](#deixe-sugest%C3%B5es-e-ideias)
+- [Deixe Sugestões e Ideias](#deixe-sugest%C3%B5es-e-ideias)
 
 
 
