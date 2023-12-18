@@ -3,7 +3,7 @@ import { Button } from '../Button'
 import * as S from './styled'
 import { formatCurrency } from '../../utils/formatCurrency'
 
-export const Card = ({ cardData }: CardProps) => {
+export const Card = ({ cardData, onBuyClick }: CardProps) => {
   return (
     <>
       {cardData?.map((products) => (
@@ -14,7 +14,9 @@ export const Card = ({ cardData }: CardProps) => {
             <p>{formatCurrency(products?.price)}</p>
           </div>
 
-          <Button size="medium">Comprar</Button>
+          <Button size="medium" onClick={() => onBuyClick(products._id)}>
+            Comprar
+          </Button>
         </S.CardContent>
       ))}
     </>
