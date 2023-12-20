@@ -3,8 +3,11 @@ import * as S from './styled'
 import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
+import { useNavigate } from 'react-router-dom'
+import { routes } from '../../routes'
 
 export const Header = () => {
+  const navigate = useNavigate()
   return (
     <S.Header>
       <div className="container">
@@ -15,7 +18,9 @@ export const Header = () => {
 
           <Search />
 
-          <Button size="small">Entrar</Button>
+          <Button size="small" onClick={() => navigate(routes.login)}>
+            Entrar
+          </Button>
 
           <S.Cart>
             <PiShoppingCartFill />
