@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     line-height: 1.5;
     font-family: ${({ theme }) => theme.fonts.family.primary};
+    font-weight: ${({ theme }) => theme.fonts.weight.light};
     font-size: 62.5%;
   }
 
