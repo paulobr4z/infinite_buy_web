@@ -6,15 +6,14 @@ import { formatCurrency } from '../../utils/formatCurrency'
 export const Card = ({ cardData, onBuyClick }: CardProps) => {
   return (
     <>
-      {cardData?.map((products) => (
-        <S.CardContent key={products?._id}>
-          <img src={products?.images} alt={products?.name} />
+      {cardData?.map((product) => (
+        <S.CardContent key={product?._id}>
+          <img src={product?.images} alt={product?.name} />
           <div>
-            <h2>{products?.name}</h2>
-            <p>{formatCurrency(products?.price)}</p>
+            <h2>{product?.name}</h2>
+            <p>{formatCurrency(product?.price)}</p>
           </div>
-
-          <Button size="medium" onClick={() => onBuyClick(products._id)}>
+          <Button size="medium" onClick={() => onBuyClick(product)}>
             Comprar
           </Button>
         </S.CardContent>

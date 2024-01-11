@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from 'react'
+import React, { createContext, useState, useEffect, ReactNode } from 'react'
 import { ProductsProps } from '../../types'
 
 interface Product extends ProductsProps {
@@ -7,9 +7,10 @@ interface Product extends ProductsProps {
 
 interface CartContextProps {
   productsCart: Product[]
-  addProductToCart: (id: string) => void
+  addProductToCart: (product: Product) => void
   removeProductFromCart: (id: string) => void
   clearCart: () => void
+  incrementProductQuantity: (id: string) => void
 }
 
 export const CartContext = createContext<CartContextProps | undefined>(
@@ -21,24 +22,26 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [productsCart, setProductsCart] = useState<Product[]>([])
 
-  const addProductToCart = (_id: string): void => {
+  // Carrega os dados do carrinho do localStorage ao inicializar
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart')
+    if (storedCart) {
+      setProductsCart(JSON.parse(storedCart))
+    }
+  }, []) // Executado apenas uma vez ao montar o componente
+
+  // Salva os dados do carrinho no localStorage sempre que o carrinho é atualizado
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(productsCart))
+  }, [productsCart]) // Executado sempre que productsCart for alterado
+
+  const addProductToCart = (product: Product): void => {
     const copyProductsCart = [...productsCart]
 
-    const item = copyProductsCart.find((product) => product._id === _id)
+    const item = copyProductsCart.find((p) => p._id === product._id)
 
     if (!item) {
-      const productToAdd: Product = {
-        _id,
-        amount: 0,
-        name: '',
-        images: '',
-        price: 0,
-        description: '',
-        discount: 0,
-        qtd: 1,
-      }
-
-      copyProductsCart.push(productToAdd)
+      copyProductsCart.push({ ...product, qtd: 1 })
     } else {
       item.qtd = item.qtd + 1
     }
@@ -46,17 +49,17 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     setProductsCart(copyProductsCart)
   }
 
-  const removeProductFromCart = (_id: string): void => {
+  const removeProductFromCart = (id: string): void => {
     const copyProductsCart = [...productsCart]
 
-    const item = copyProductsCart.find((product) => product._id === _id)
+    const item = copyProductsCart.find((product) => product._id === id)
 
     if (item && item.qtd > 1) {
       item.qtd = item.qtd - 1
       setProductsCart(copyProductsCart)
     } else {
       const arrayFiltered = copyProductsCart.filter(
-        (product) => product._id !== _id,
+        (product) => product._id !== id,
       )
       setProductsCart(arrayFiltered)
     }
@@ -66,6 +69,16 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     setProductsCart([])
   }
 
+  const incrementProductQuantity = (id: string): void => {
+    const copyProductsCart = [...productsCart]
+    const item = copyProductsCart.find((product) => product._id === id)
+
+    if (item) {
+      item.qtd = item.qtd + 1
+      setProductsCart(copyProductsCart)
+    }
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -73,6 +86,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
         addProductToCart,
         removeProductFromCart,
         clearCart,
+        incrementProductQuantity,
       }}
     >
       {children}
