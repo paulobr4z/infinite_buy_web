@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
+import { ProductsProps } from '../../types' // Importe a interface ProductsProps
 
 export const Cart: React.FC = () => {
   const contextoCarrinho = useContext(CartContext)
@@ -15,6 +16,14 @@ export const Cart: React.FC = () => {
     incrementProductQuantity,
   } = contextoCarrinho
 
+  const calculateTotal = (productsCart: ProductsProps[]) => {
+    return productsCart
+      .reduce((total, produto) => {
+        return total + (produto.amount || 1) * produto.price
+      }, 0)
+      .toFixed(2)
+  }
+
   return (
     <div>
       <h2>Seu Carrinho</h2>
@@ -27,7 +36,7 @@ export const Cart: React.FC = () => {
               <li key={produto._id}>
                 <span>{produto.name}</span>
                 <span>
-                  {produto.qtd} x R${produto.price}
+                  {produto.amount} x R${produto.price}
                 </span>
                 <button onClick={() => incrementProductQuantity(produto._id)}>
                   incrementa
@@ -46,12 +55,4 @@ export const Cart: React.FC = () => {
       )}
     </div>
   )
-}
-
-const calculateTotal = (productsCart) => {
-  return productsCart
-    .reduce((total, produto) => {
-      return total + produto.qtd * produto.price
-    }, 0)
-    .toFixed(2)
 }

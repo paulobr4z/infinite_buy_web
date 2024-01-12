@@ -1,13 +1,13 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react'
 import { ProductsProps } from '../../types'
 
-interface Product extends ProductsProps {
-  qtd: number
+interface CartProduct extends ProductsProps {
+  amount: number
 }
 
 interface CartContextProps {
-  productsCart: Product[]
-  addProductToCart: (product: Product) => void
+  productsCart: CartProduct[]
+  addProductToCart: (product: ProductsProps) => void
   removeProductFromCart: (id: string) => void
   clearCart: () => void
   incrementProductQuantity: (id: string) => void
@@ -20,30 +20,27 @@ export const CartContext = createContext<CartContextProps | undefined>(
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [productsCart, setProductsCart] = useState<Product[]>([])
+  const [productsCart, setProductsCart] = useState<CartProduct[]>([])
 
-  // Carrega os dados do carrinho do localStorage ao inicializar
   useEffect(() => {
     const storedCart = localStorage.getItem('cart')
     if (storedCart) {
       setProductsCart(JSON.parse(storedCart))
     }
-  }, []) // Executado apenas uma vez ao montar o componente
-
-  // Salva os dados do carrinho no localStorage sempre que o carrinho é atualizado
+  }, [])
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(productsCart))
-  }, [productsCart]) // Executado sempre que productsCart for alterado
+  }, [productsCart])
 
-  const addProductToCart = (product: Product): void => {
+  const addProductToCart = (product: ProductsProps): void => {
     const copyProductsCart = [...productsCart]
 
     const item = copyProductsCart.find((p) => p._id === product._id)
 
     if (!item) {
-      copyProductsCart.push({ ...product, qtd: 1 })
+      copyProductsCart.push({ ...product, amount: 1 })
     } else {
-      item.qtd = item.qtd + 1
+      item.amount = item.amount + 1
     }
 
     setProductsCart(copyProductsCart)
@@ -54,8 +51,8 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
     const item = copyProductsCart.find((product) => product._id === id)
 
-    if (item && item.qtd > 1) {
-      item.qtd = item.qtd - 1
+    if (item && item.amount > 1) {
+      item.amount = item.amount - 1
       setProductsCart(copyProductsCart)
     } else {
       const arrayFiltered = copyProductsCart.filter(
@@ -74,7 +71,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     const item = copyProductsCart.find((product) => product._id === id)
 
     if (item) {
-      item.qtd = item.qtd + 1
+      item.amount = item.amount + 1
       setProductsCart(copyProductsCart)
     }
   }
