@@ -8,11 +8,22 @@ export const TitleCart = styled.div`
   font-size: 30px;
 `
 
+export const EmptyCartContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`
+
 export const CartItens = styled.div`
+  width: 480px;
   background-color: white;
   display: flex;
   flex-direction: column;
   padding: 20px;
+`
+export const EmptyCart = styled.p`
+  font-size: 14px;
+  font-weight: 700;
 `
 
 export const CartContent = styled.div`
@@ -44,7 +55,6 @@ export const CardProduct = styled.ul`
 export const InfoProducts = styled.div`
   display: flex;
   gap: 22px;
-  
 
   h2 {
     font-size: 14px;
@@ -79,7 +89,6 @@ export const Amount = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  
 
   span {
     font-size: 15px;
@@ -94,7 +103,7 @@ export const Total = styled.div`
   padding-top: 10px;
   font-size: 16px;
   font-weight: 700;
-  
+
   p {
     font-size: 16px;
     font-weight: 700;
