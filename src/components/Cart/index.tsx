@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ProductsProps } from '../../types'
+import { FiPlusSquare, FiMinusSquare } from 'react-icons/fi'
+
 import * as S from './styled'
+import { Button } from '../Button'
 
 export const Cart: React.FC = () => {
   const contextoCarrinho = useContext(CartContext)
@@ -10,12 +13,8 @@ export const Cart: React.FC = () => {
     throw new Error('useCart deve ser usado dentro de um CartProvider')
   }
 
-  const {
-    productsCart,
-    removeProductFromCart,
-    clearCart,
-    incrementProductQuantity,
-  } = contextoCarrinho
+  const { productsCart, removeProductFromCart, incrementProductQuantity } =
+    contextoCarrinho
 
   const calculateTotal = (productsCart: ProductsProps[]) => {
     return productsCart
@@ -27,32 +26,50 @@ export const Cart: React.FC = () => {
 
   return (
     <S.CartItens>
-      <h2>Seu Carrinho</h2>
       {productsCart.length === 0 ? (
         <p>Seu carrinho está vazio</p>
       ) : (
-        <div>
-          <ul>
+        <S.CartContent>
+          <S.CardProduct>
             {productsCart.map((produto) => (
               <li key={produto._id}>
-                <span>{produto.name}</span>
-                <span>
-                  {produto.amount} x R${produto.price}
-                </span>
-                <button onClick={() => incrementProductQuantity(produto._id)}>
-                  incrementa
-                </button>
-                <button onClick={() => removeProductFromCart(produto._id)}>
-                  Remover
-                </button>
+                <img src={produto.images} alt="produto" />
+                <S.InfoProducts>
+                  <div>
+                    <S.TitleCartProducts>{produto.name}</S.TitleCartProducts>
+                    <S.TitleCartProducts>R${produto.price}</S.TitleCartProducts>
+                    <S.DescriptionAmount>
+                      <S.Description>{produto.description}</S.Description>
+
+                      <S.Amount>
+                        <FiPlusSquare
+                          size={'20px'}
+                          onClick={() => incrementProductQuantity(produto._id)}
+                        />
+
+                        <span>{produto.amount}</span>
+
+                        <FiMinusSquare
+                          size={'20px'}
+                          onClick={() => removeProductFromCart(produto._id)}
+                        />
+                      </S.Amount>
+                    </S.DescriptionAmount>
+                  </div>
+                </S.InfoProducts>
               </li>
             ))}
-          </ul>
-          <div>
-            <h3>Total: R${calculateTotal(productsCart)}</h3>
-            <button onClick={clearCart}>Limpar Carrinho</button>
-          </div>
-        </div>
+          </S.CardProduct>
+          <S.Total>
+            <p>
+              Total: <span>R${calculateTotal(productsCart)}</span>
+            </p>
+
+            <div>
+              <Button size="large">Finalizar Compra</Button>
+            </div>
+          </S.Total>
+        </S.CartContent>
       )}
     </S.CartItens>
   )

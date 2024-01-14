@@ -1,11 +1,14 @@
 import { PiShoppingCartFill } from 'react-icons/pi'
-import * as S from './styled'
+
 import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
 import Modal from 'react-modal'
 import { useState } from 'react'
 import { Cart } from '../Cart'
+import { IoCloseSharp } from 'react-icons/io5'
+import * as S from './styled'
+import { TitleCart } from '../Cart/styled'
 Modal.setAppElement('#root')
 
 export const Header = () => {
@@ -27,13 +30,12 @@ export const Header = () => {
       left: 'auto',
       right: 0,
       bottom: 0,
-      width: '480px',
       height: '100%',
       marginRight: 0,
       transform: 'none',
       backgroundColor: 'white',
       border: 'none',
-      overflowY: 'auto',
+      overflowY: 'auto' as const,
     },
   }
 
@@ -48,6 +50,10 @@ export const Header = () => {
             style={customStyles}
             contentLabel="Example Modal"
           >
+            <TitleCart>
+              <h3>Seu Carrinho</h3>
+              <IoCloseSharp onClick={closeModal} />
+            </TitleCart>
             <Cart />
           </Modal>
         </div>
