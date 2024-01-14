@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
-import { ProductsProps } from '../../types' // Importe a interface ProductsProps
+import { ProductsProps } from '../../types'
+import * as S from './styled'
 
 export const Cart: React.FC = () => {
   const contextoCarrinho = useContext(CartContext)
@@ -25,7 +26,7 @@ export const Cart: React.FC = () => {
   }
 
   return (
-    <div>
+    <S.CartItens>
       <h2>Seu Carrinho</h2>
       {productsCart.length === 0 ? (
         <p>Seu carrinho está vazio</p>
@@ -53,6 +54,6 @@ export const Cart: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </S.CartItens>
   )
 }

@@ -2,6 +2,7 @@ import { PiShoppingCartFill } from 'react-icons/pi'
 import * as S from './styled'
 import { Search } from '../../Search'
 import { RxHamburgerMenu } from 'react-icons/rx'
+
 // import { RxCross2 } from "react-icons/rx";
 
 export const ResponsiveHeader = () => {
