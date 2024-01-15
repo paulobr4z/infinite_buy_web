@@ -46,16 +46,15 @@ export const Cart: React.FC = () => {
                       <S.Description>{produto.description}</S.Description>
 
                       <S.Amount>
-                        <FiPlusSquare
-                          size={'20px'}
-                          onClick={() => incrementProductQuantity(produto._id)}
-                        />
-
-                        <span>{produto.amount}</span>
-
                         <FiMinusSquare
                           size={'20px'}
                           onClick={() => removeProductFromCart(produto._id)}
+                        />
+                        <span>{produto.amount}</span>
+
+                        <FiPlusSquare
+                          size={'20px'}
+                          onClick={() => incrementProductQuantity(produto._id)}
                         />
                       </S.Amount>
                     </S.DescriptionAmount>

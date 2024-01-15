@@ -1,12 +1,8 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useState, ReactNode } from 'react'
 import { ProductsProps } from '../../types'
 
-interface CartProduct extends ProductsProps {
-  amount: number
-}
-
 interface CartContextProps {
-  productsCart: CartProduct[]
+  productsCart: ProductsProps[]
   addProductToCart: (product: ProductsProps) => void
   removeProductFromCart: (id: string) => void
   clearCart: () => void
@@ -20,17 +16,7 @@ export const CartContext = createContext<CartContextProps | undefined>(
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [productsCart, setProductsCart] = useState<CartProduct[]>([])
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem('cart')
-    if (storedCart) {
-      setProductsCart(JSON.parse(storedCart))
-    }
-  }, [])
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(productsCart))
-  }, [productsCart])
+  const [productsCart, setProductsCart] = useState<ProductsProps[]>([])
 
   const addProductToCart = (product: ProductsProps): void => {
     const copyProductsCart = [...productsCart]

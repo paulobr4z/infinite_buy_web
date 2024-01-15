@@ -1,3 +1,4 @@
+import { IoCloseSharp } from 'react-icons/io5'
 import styled from 'styled-components'
 
 export const TitleCart = styled.div`
@@ -7,6 +8,9 @@ export const TitleCart = styled.div`
   color: #0e3c1f;
   font-size: 30px;
 `
+export const ClosedIcon = styled(IoCloseSharp)`
+  cursor: pointer;
+`
 
 export const EmptyCartContent = styled.div`
   display: flex;
@@ -15,7 +19,6 @@ export const EmptyCartContent = styled.div`
 `
 
 export const CartItens = styled.div`
-  width: 480px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -80,6 +83,7 @@ export const DescriptionAmount = styled.div`
   width: 400px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 `
 export const Description = styled.span`
   color: #636363;

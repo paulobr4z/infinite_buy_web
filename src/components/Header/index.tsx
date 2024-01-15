@@ -4,15 +4,16 @@ import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
 import Modal from 'react-modal'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Cart } from '../Cart'
-import { IoCloseSharp } from 'react-icons/io5'
 import * as S from './styled'
-import { TitleCart } from '../Cart/styled'
+import { ClosedIcon, TitleCart } from '../Cart/styled'
+import { CartContext } from '../../context/CartContext'
 Modal.setAppElement('#root')
 
 export const Header = () => {
   const [modalIsOpen, setIsOpen] = useState(false)
+  const { productsCart } = useContext(CartContext)
 
   function openModal() {
     setIsOpen(true)
@@ -52,7 +53,7 @@ export const Header = () => {
           >
             <TitleCart>
               <h3>Seu Carrinho</h3>
-              <IoCloseSharp onClick={closeModal} />
+              <ClosedIcon onClick={closeModal} />
             </TitleCart>
             <Cart />
           </Modal>
@@ -69,7 +70,7 @@ export const Header = () => {
           <S.Cart>
             <PiShoppingCartFill onClick={openModal} />
             <S.NumberContentCart>
-              <span>5</span>
+              <span>{productsCart.length}</span>
             </S.NumberContentCart>
           </S.Cart>
         </S.ContentHeader>
