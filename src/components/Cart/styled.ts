@@ -1,5 +1,6 @@
 import { IoCloseSharp } from 'react-icons/io5'
 import styled from 'styled-components'
+import { MobileBreakPoint } from '../../const/breackPoint'
 
 export const TitleCart = styled.div`
   display: flex;
@@ -7,6 +8,10 @@ export const TitleCart = styled.div`
   border-bottom: 2px solid rgba(59, 53, 53, 0.68);
   color: #0e3c1f;
   font-size: 30px;
+
+  @media (max-width: ${MobileBreakPoint}) {
+    font-size: 20px;
+  }
 `
 export const ClosedIcon = styled(IoCloseSharp)`
   cursor: pointer;
@@ -64,14 +69,6 @@ export const InfoProducts = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    border: 1px solid rgba(99, 99, 99, 0.2);
-    padding: 8px;
   }
 `
 

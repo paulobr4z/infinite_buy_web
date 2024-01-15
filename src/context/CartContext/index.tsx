@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from 'react'
+import React, { createContext, useState, ReactNode, useEffect } from 'react'
 import { ProductsProps } from '../../types'
 
 interface CartContextProps {
@@ -16,17 +16,16 @@ export const CartContext = createContext<CartContextProps | undefined>(
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [productsCart, setProductsCart] = useState<ProductsProps[]>(() => {
-    const storageCart = localStorage.getItem('cart')
-    if (storageCart) {
-      return JSON.parse(storageCart)
-    }
-    return []
-  })
+  const [productsCart, setProductsCart] = useState<ProductsProps[]>(
+    JSON.parse(localStorage.getItem('cart') || '[]'),
+  )
+
+  const updateLocalStorage = (cart: ProductsProps[]): void => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
 
   const addProductToCart = (product: ProductsProps): void => {
     const copyProductsCart = [...productsCart]
-
     const item = copyProductsCart.find((p) => p._id === product._id)
 
     if (!item) {
@@ -36,29 +35,29 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     setProductsCart(copyProductsCart)
-    localStorage.setItem('cart', JSON.stringify(copyProductsCart))
+    updateLocalStorage(copyProductsCart)
   }
 
   const removeProductFromCart = (id: string): void => {
     const copyProductsCart = [...productsCart]
-
     const item = copyProductsCart.find((product) => product._id === id)
 
     if (item && item.amount > 1) {
       item.amount = item.amount - 1
-      setProductsCart(copyProductsCart)
-      localStorage.setItem('cart', JSON.stringify(copyProductsCart))
     } else {
       const arrayFiltered = copyProductsCart.filter(
         (product) => product._id !== id,
       )
       setProductsCart(arrayFiltered)
-      localStorage.setItem('cart', JSON.stringify(arrayFiltered))
     }
+
+    setProductsCart(copyProductsCart)
+    updateLocalStorage(copyProductsCart)
   }
 
   const clearCart = (): void => {
     setProductsCart([])
+    updateLocalStorage([])
   }
 
   const incrementProductQuantity = (id: string): void => {
@@ -67,10 +66,15 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
     if (item) {
       item.amount = item.amount + 1
-      setProductsCart(copyProductsCart)
-      localStorage.setItem('cart', JSON.stringify(copyProductsCart))
     }
+
+    setProductsCart(copyProductsCart)
+    updateLocalStorage(copyProductsCart)
   }
+
+  useEffect(() => {
+    setProductsCart(JSON.parse(localStorage.getItem('cart') || '[]'))
+  }, [])
 
   return (
     <CartContext.Provider
