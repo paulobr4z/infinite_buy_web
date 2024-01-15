@@ -16,7 +16,13 @@ export const CartContext = createContext<CartContextProps | undefined>(
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [productsCart, setProductsCart] = useState<ProductsProps[]>([])
+  const [productsCart, setProductsCart] = useState<ProductsProps[]>(() => {
+    const storageCart = localStorage.getItem('cart')
+    if (storageCart) {
+      return JSON.parse(storageCart)
+    }
+    return []
+  })
 
   const addProductToCart = (product: ProductsProps): void => {
     const copyProductsCart = [...productsCart]
@@ -30,6 +36,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     setProductsCart(copyProductsCart)
+    localStorage.setItem('cart', JSON.stringify(copyProductsCart))
   }
 
   const removeProductFromCart = (id: string): void => {
@@ -40,11 +47,13 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     if (item && item.amount > 1) {
       item.amount = item.amount - 1
       setProductsCart(copyProductsCart)
+      localStorage.setItem('cart', JSON.stringify(copyProductsCart))
     } else {
       const arrayFiltered = copyProductsCart.filter(
         (product) => product._id !== id,
       )
       setProductsCart(arrayFiltered)
+      localStorage.setItem('cart', JSON.stringify(arrayFiltered))
     }
   }
 
@@ -59,6 +68,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     if (item) {
       item.amount = item.amount + 1
       setProductsCart(copyProductsCart)
+      localStorage.setItem('cart', JSON.stringify(copyProductsCart))
     }
   }
 

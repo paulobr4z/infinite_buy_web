@@ -83,7 +83,7 @@ export const CardContainer: React.FC = () => {
     <div className="container">
       {loading ? (
         <S.Loading>
-          <CircularSpinner />
+          <CircularSpinner cor="green" />
         </S.Loading>
       ) : (
         <>
