@@ -17,7 +17,7 @@ Bem-vindo ao Infinity Buy.
 - [Deploy](#deploy)
 - [Desenvolvedores](#desenvolvedores)
 - [Executando o Projeto WEB Localmente](#executando-o-projeto-web-localmente)
-- [Deixe Sujestões e Idéias](#deixe-sujestões-e-idéias)
+- [Deixe Sugestões e Ideias](#deixe-sugest%C3%B5es-e-ideias)
 
 
 
@@ -116,7 +116,7 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 ## Deploy
 
- > 
+ >https://infinite-buy.vercel.app/
 
 ## Desenvolvedores
 
@@ -190,11 +190,8 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
   
 
-## Deixe Sujestões e Idéias
+## Deixe Sugestões e Ideias
 
-    -
-    -
-    -
     -
 
 

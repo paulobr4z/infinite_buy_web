@@ -1,5 +1,6 @@
 import { PiShoppingCartFill } from 'react-icons/pi'
-
+import { useNavigate } from 'react-router-dom'
+import { routes } from '../../routes'
 import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
@@ -9,9 +10,11 @@ import { Cart } from '../Cart'
 import * as S from './styled'
 import { ClosedIcon, TitleCart } from '../Cart/styled'
 import { CartContext } from '../../context/CartContext'
+import { SomaTotalCarrinho } from '../../utils/somaTotalCarrinho'
 Modal.setAppElement('#root')
 
 export const Header = () => {
+  const navigate = useNavigate()
   const [modalIsOpen, setIsOpen] = useState(false)
   const { productsCart } = useContext(CartContext)
 
@@ -24,7 +27,6 @@ export const Header = () => {
   function closeModal() {
     setIsOpen(false)
   }
-
   const customStyles = {
     content: {
       top: 0,
@@ -39,7 +41,6 @@ export const Header = () => {
       overflowY: 'auto' as const,
     },
   }
-
   return (
     <S.Header>
       <div className="container">
@@ -65,12 +66,14 @@ export const Header = () => {
 
           <Search />
 
-          <Button size="small">Entrar</Button>
+          <Button size="small" onClick={() => navigate(routes.login)}>
+            Entrar
+          </Button>
 
           <S.Cart>
             <PiShoppingCartFill onClick={openModal} />
             <S.NumberContentCart>
-              <span>{productsCart.length}</span>
+              <span>{SomaTotalCarrinho(productsCart)}</span>
             </S.NumberContentCart>
           </S.Cart>
         </S.ContentHeader>
