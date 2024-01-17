@@ -4,7 +4,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 10px;
+  gap: 1rem;
 
   h2 {
     color: ${({ theme }) => theme.colors.text.primaryAccent};
