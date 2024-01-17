@@ -1,10 +1,11 @@
+import { ToastContainer } from 'react-toastify'
 import styled from 'styled-components'
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 10px;
+  gap: 1rem;
 
   h2 {
     color: ${({ theme }) => theme.colors.text.primaryAccent};
@@ -22,5 +23,11 @@ export const Form = styled.form`
     font-size: ${({ theme }) => theme.fonts.text.medium};
     font-weight: ${({ theme }) => theme.fonts.weight.semiBold};
     cursor: pointer;
+  }
+`
+
+export const ToastContainerStyled = styled(ToastContainer)`
+  .Toastify__toast-body {
+    font-size: 16px;
   }
 `

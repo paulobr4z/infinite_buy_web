@@ -10,14 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@types/styled-components": "^5.1.29",
     "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.3",
     "react-icons": "^4.12.0",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.21.0",
-    "styled-components": "^6.1.0"
+    "react-toastify": "^10.0.0",
+    "styled-components": "^6.1.0",
+    "yup": "^1.3.3"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
