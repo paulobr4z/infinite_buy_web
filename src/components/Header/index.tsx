@@ -1,6 +1,7 @@
 import { PiShoppingCartFill } from 'react-icons/pi'
 import { useNavigate } from 'react-router-dom'
 import { routes } from '../../routes'
+import { useAuthContext } from '../../context/AuthContext'
 import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
@@ -17,6 +18,7 @@ export const Header = () => {
   const navigate = useNavigate()
   const [modalIsOpen, setIsOpen] = useState(false)
   const { productsCart } = useContext(CartContext)
+  const { user, isAuthenticated } = useAuthContext()
 
   function openModal() {
     setIsOpen(true)
@@ -71,7 +73,7 @@ export const Header = () => {
           <Search />
 
           <Button size="small" onClick={() => navigate(routes.login)}>
-            Entrar
+            {isAuthenticated ? user?.name : 'Entrar'}
           </Button>
 
           <S.Cart>

@@ -19,11 +19,13 @@ import { useState } from 'react'
 import { schemaValidationLogin } from '../../utils/schemaValidation'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { ToastContainerStyled } from '../Signup/styled'
+import { useAuthContext } from '../../context/AuthContext'
 
 export const Login = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
+  const { setUser, setIsAuthenticated } = useAuthContext()
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword)
@@ -51,7 +53,8 @@ export const Login = () => {
           'user',
           JSON.stringify(responseApiRequest?.data.user),
         )
-
+        setUser(responseApiRequest.data.user)
+        setIsAuthenticated(true)
         navigate('/home')
       }
     } catch (error) {
@@ -98,7 +101,7 @@ export const Login = () => {
         <MessageErrors>{errors.password?.message}</MessageErrors>
 
         <Button size="large" type="submit">
-          {loading ? <CircularSpinner /> : 'Entrar'}
+          {loading ? <CircularSpinner cor={'white'} /> : 'Entrar'}
         </Button>
         <a href="#">Recuperar senha </a>
       </Form>
