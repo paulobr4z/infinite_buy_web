@@ -38,24 +38,24 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   const removeProductFromCart = (id: string): void => {
     const copyProductsCart = [...productsCart]
-    const item = copyProductsCart.find((product) => product._id === id)
+    const itemIndex = copyProductsCart.findIndex(
+      (product) => product._id === id,
+    )
 
-    if (item && item.amount > 1) {
-      item.amount = item.amount - 1
-    } else {
-      const arrayFiltered = copyProductsCart.filter(
-        (product) => product._id !== id,
-      )
-      setProductsCart(arrayFiltered)
+    if (itemIndex !== -1) {
+      if (copyProductsCart[itemIndex].amount > 1) {
+        copyProductsCart[itemIndex].amount -= 1
+      } else {
+        copyProductsCart.splice(itemIndex, 1)
+      }
+
+      setProductsCart([...copyProductsCart])
+      updateLocalStorage(copyProductsCart)
     }
-
-    setProductsCart(copyProductsCart)
-    updateLocalStorage(copyProductsCart)
   }
 
   const clearCart = (): void => {
     setProductsCart([])
-    updateLocalStorage([])
   }
 
   const incrementProductQuantity = (id: string): void => {

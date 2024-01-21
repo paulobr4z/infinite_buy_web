@@ -47,13 +47,13 @@ export const Cart: React.FC = () => {
 
                       <S.Amount>
                         <FiMinusSquare
-                          size={'20px'}
+                          size={'15px'}
                           onClick={() => removeProductFromCart(produto._id)}
                         />
                         <span>{produto.amount}</span>
 
                         <FiPlusSquare
-                          size={'20px'}
+                          size={'15px'}
                           onClick={() => incrementProductQuantity(produto._id)}
                         />
                       </S.Amount>
@@ -69,7 +69,7 @@ export const Cart: React.FC = () => {
             </p>
 
             <div>
-              <Button size="large">Finalizar Compra</Button>
+              <Button size="medium">Finalizar Compra</Button>
             </div>
           </S.Total>
         </S.CartContent>

@@ -8,6 +8,7 @@ import { CartContext } from '../../../context/CartContext'
 import Modal from 'react-modal'
 import { ClosedIcon, TitleCart } from '../../Cart/styled'
 import { Cart } from '../../Cart'
+import { customStylesModalCartResponsive } from '../../../const/customStylesModal'
 Modal.setAppElement('#root')
 
 // import { RxCross2 } from "react-icons/rx";
@@ -16,29 +17,12 @@ export const ResponsiveHeader = () => {
   const { productsCart } = useContext(CartContext)
   const [modalIsOpen, setIsOpen] = useState(false)
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true)
   }
 
-  function afterOpenModal() {}
-
   function closeModal() {
     setIsOpen(false)
-  }
-  const customStyles = {
-    content: {
-      width: '375px',
-      top: 0,
-      left: 'auto',
-      right: 0,
-      bottom: 0,
-      height: '100%',
-      marginRight: 0,
-      transform: 'none',
-      backgroundColor: 'white',
-      border: 'none',
-      overflowY: 'auto' as const,
-    },
   }
 
   return (
@@ -47,10 +31,9 @@ export const ResponsiveHeader = () => {
         <div>
           <Modal
             isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
+            style={customStylesModalCartResponsive}
+            contentLabel="Modal Cart"
           >
             <TitleCart>
               <h3>Seu Carrinho</h3>

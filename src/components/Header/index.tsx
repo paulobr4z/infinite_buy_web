@@ -12,6 +12,7 @@ import * as S from './styled'
 import { ClosedIcon, TitleCart } from '../Cart/styled'
 import { CartContext } from '../../context/CartContext'
 import { SomaTotalCarrinho } from '../../utils/somaTotalCarrinho'
+import { customStylesModalCart } from '../../const/customStylesModal'
 Modal.setAppElement('#root')
 
 export const Header = () => {
@@ -24,27 +25,8 @@ export const Header = () => {
     setIsOpen(true)
   }
 
-  function afterOpenModal() {}
-
   function closeModal() {
     setIsOpen(false)
-  }
-  const customStyles = {
-    content: {
-      top: 0,
-      left: 'auto',
-      right: 0,
-      bottom: 0,
-      height: '100%',
-      marginRight: 0,
-      transform: 'none',
-      border: 'none',
-      overflowY: 'auto' as const,
-      backgroundColor: 'white',
-    },
-    overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    },
   }
 
   return (
@@ -53,10 +35,9 @@ export const Header = () => {
         <div>
           <Modal
             isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
+            style={customStylesModalCart}
+            contentLabel="Modal Cart"
           >
             <TitleCart>
               <h3>Seu Carrinho</h3>

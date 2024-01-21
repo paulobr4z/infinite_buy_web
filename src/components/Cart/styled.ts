@@ -4,19 +4,21 @@ import styled from 'styled-components'
 export const TitleCart = styled.div`
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 4px 8px 0px rgba(99, 99, 99, 0.2);
-  width: 100%;
-  background-color: red;
+  align-items: flex-start;
+  background: #fff;
+  box-shadow: inset -1px -5px 7px rgba(99, 99, 99, 0.2);
+  padding: 24px 32px;
 
   h3 {
     color: #0e3c1f;
     font-size: 18px;
     font-weight: 700;
-    box-shadow: 0px 4px 8px 0px rgba(99, 99, 99, 0.2);
   }
 `
 export const ClosedIcon = styled(IoCloseSharp)`
   cursor: pointer;
+  width: 24px;
+  height: 24px;
 `
 
 export const EmptyCartContent = styled.div`
@@ -29,6 +31,7 @@ export const CartItens = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 `
 export const EmptyCart = styled.p`
   font-size: 14px;
@@ -44,13 +47,14 @@ export const CardProduct = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  border-bottom: 2px solid rgba(59, 53, 53, 0.68);
+  border-bottom: 1px solid rgba(99, 99, 99, 0.2);
 
   li {
     display: flex;
     height: 108px;
     gap: 22px;
     align-items: center;
+    border-bottom: 1px solid rgba(99, 99, 99, 0.2);
   }
 
   img {
@@ -59,6 +63,13 @@ export const CardProduct = styled.ul`
     border-radius: 16px;
     border: 1px solid rgba(99, 99, 99, 0.2);
     padding: 8px;
+  }
+
+  @media (max-width: 700px) {
+    img {
+      width: 50px;
+      height: 50px;
+    }
   }
 `
 export const InfoProducts = styled.div`
@@ -76,16 +87,28 @@ export const InfoProducts = styled.div`
 export const TitleCartProducts = styled.h3`
   display: flex;
   font-size: 14px;
+
+  @media (max-width: 700px) {
+    font-size: 10px;
+  }
 `
 export const DescriptionAmount = styled.div`
   width: 400px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+
+  @media (max-width: 700px) {
+    width: 240px;
+  }
 `
 export const Description = styled.span`
   color: #636363;
   font-size: 12px;
+
+  @media (max-width: 700px) {
+    font-size: 10px;
+  }
 `
 export const Amount = styled.div`
   display: flex;
@@ -96,6 +119,14 @@ export const Amount = styled.div`
     font-size: 15px;
     width: 24px;
     text-align: center;
+  }
+
+  @media (max-width: 700px) {
+    gap: 4px;
+    span {
+      font-size: 11px;
+      width: 15px;
+    }
   }
 `
 export const Total = styled.div`
