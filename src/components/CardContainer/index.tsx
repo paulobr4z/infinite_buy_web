@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ProductsProps } from '../../types'
 import { Card } from '../Card'
 import * as S from './styled'
 import { getProductsPaginated } from '../../services/apiGet'
 import { CircularSpinner } from '../CircularSpinner'
 import { Pagination } from '../Pagination'
+import { CartContext } from '../../context/CartContext'
 
 export interface PaginationProps {
   currentPage: number
@@ -16,6 +17,7 @@ export interface PaginationProps {
 }
 
 export const CardContainer: React.FC = () => {
+  const { addProductToCart } = useContext(CartContext)
   const [products, setProducts] = useState<ProductsProps[]>([])
   const [loading, setLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -69,6 +71,10 @@ export const CardContainer: React.FC = () => {
     }
   }
 
+  const handleBuyClick = (productId: ProductsProps) => {
+    addProductToCart(productId)
+  }
+
   useEffect(() => {
     getPaginated()
   }, [currentPage])
@@ -77,13 +83,13 @@ export const CardContainer: React.FC = () => {
     <div className="container">
       {loading ? (
         <S.Loading>
-          <CircularSpinner />
+          <CircularSpinner cor="green" />
         </S.Loading>
       ) : (
         <>
           <S.TitleCards>Todos os Produtos</S.TitleCards>
           <S.ContainerCard>
-            <Card cardData={products} />
+            <Card cardData={products} onBuyClick={handleBuyClick} />
           </S.ContainerCard>
 
           <Pagination

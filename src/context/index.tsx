@@ -1,5 +1,5 @@
 import { AuthProvider } from './AuthContext'
-import { CartProvider } from './ContextCart'
+import { CartProvider } from './CartContext'
 
 interface AppProviderProps {
   children: React.ReactNode

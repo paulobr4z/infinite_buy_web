@@ -1,6 +1,6 @@
 export interface ProductsProps {
   _id: string
-  amount: number | undefined
+  amount: number
   name: string
   images: string
   price: number
@@ -10,4 +10,5 @@ export interface ProductsProps {
 
 export interface CardProps {
   cardData: ProductsProps[]
+  onBuyClick: (productId: ProductsProps) => void
 }

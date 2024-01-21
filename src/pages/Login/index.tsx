@@ -101,7 +101,7 @@ export const Login = () => {
         <MessageErrors>{errors.password?.message}</MessageErrors>
 
         <Button size="large" type="submit">
-          {loading ? <CircularSpinner /> : 'Entrar'}
+          {loading ? <CircularSpinner cor={'white'} /> : 'Entrar'}
         </Button>
         <a href="#">Recuperar senha </a>
       </Form>
