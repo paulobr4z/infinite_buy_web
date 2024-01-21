@@ -1,12 +1,12 @@
-import { CartProvider } from './context/ContextCart'
+import { AppProvider } from './context'
 import { InfinitBuyRoutes } from './routes/routes'
 
 export const App = () => {
   return (
     <>
-      <CartProvider>
+      <AppProvider>
         <InfinitBuyRoutes />
-      </CartProvider>
+      </AppProvider>
     </>
   )
 }

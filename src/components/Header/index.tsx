@@ -5,9 +5,12 @@ import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
 import { useNavigate } from 'react-router-dom'
 import { routes } from '../../routes'
+import { useAuthContext } from '../../context/AuthContext'
 
 export const Header = () => {
   const navigate = useNavigate()
+  const { user, isAuthenticated } = useAuthContext()
+
   return (
     <S.Header>
       <div className="container">
@@ -19,7 +22,7 @@ export const Header = () => {
           <Search />
 
           <Button size="small" onClick={() => navigate(routes.login)}>
-            Entrar
+            {isAuthenticated ? user?.name : 'Entrar'}
           </Button>
 
           <S.Cart>
