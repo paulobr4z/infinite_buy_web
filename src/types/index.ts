@@ -10,5 +10,5 @@ export interface ProductsProps {
 
 export interface CardProps {
   cardData: ProductsProps[]
-  onBuyClick: (productId: string) => void
+  onBuyClick: (productId: ProductsProps) => void
 }

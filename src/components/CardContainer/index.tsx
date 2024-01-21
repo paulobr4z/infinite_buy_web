@@ -71,7 +71,7 @@ export const CardContainer: React.FC = () => {
     }
   }
 
-  const handleBuyClick = (productId: string) => {
+  const handleBuyClick = (productId: ProductsProps) => {
     addProductToCart(productId)
   }
 

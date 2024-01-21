@@ -5,14 +5,14 @@ export const TitleCart = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   box-shadow: inset -1px -5px 7px rgba(99, 99, 99, 0.2);
   padding: 24px 32px;
 
   h3 {
     color: #0e3c1f;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: ${({ theme }) => theme.fonts.text.large};
+    font-weight: ${({ theme }) => theme.fonts.weight.bold};
   }
 `
 export const ClosedIcon = styled(IoCloseSharp)`

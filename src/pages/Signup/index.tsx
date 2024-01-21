@@ -124,7 +124,7 @@ export const Signup = () => {
         />
         <MessageErrors>{errors.passwordConfirmation?.message}</MessageErrors>
         <Button size="large" type="submit">
-          {loading ? <CircularSpinner /> : 'Cadastrar'}
+          {loading ? <CircularSpinner cor={'white'} /> : 'Cadastrar'}
         </Button>
       </Form>
     </>
