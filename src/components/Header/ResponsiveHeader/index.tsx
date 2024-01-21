@@ -7,6 +7,7 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import Modal from 'react-modal'
 import { ClosedIcon, TitleCart } from '../../Cart/styled'
+import { Cart } from '../../Cart'
 Modal.setAppElement('#root')
 
 // import { RxCross2 } from "react-icons/rx";
@@ -55,7 +56,7 @@ export const ResponsiveHeader = () => {
               <h3>Seu Carrinho</h3>
               <ClosedIcon onClick={closeModal} />
             </TitleCart>
-            <S.Cart />
+            <Cart />
           </Modal>
         </div>
         <div className="wrapper-menu">

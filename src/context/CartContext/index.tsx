@@ -9,9 +9,7 @@ interface CartContextProps {
   incrementProductQuantity: (id: string) => void
 }
 
-export const CartContext = createContext<CartContextProps | undefined>(
-  undefined,
-)
+export const CartContext = createContext({} as CartContextProps)
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,

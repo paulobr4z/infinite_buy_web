@@ -36,11 +36,15 @@ export const Header = () => {
       height: '100%',
       marginRight: 0,
       transform: 'none',
-      backgroundColor: 'white',
       border: 'none',
       overflowY: 'auto' as const,
+      backgroundColor: 'white',
+    },
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.4)',
     },
   }
+
   return (
     <S.Header>
       <div className="container">
