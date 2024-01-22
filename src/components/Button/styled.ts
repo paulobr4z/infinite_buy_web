@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { TabletBreakPoint } from '../../const/breakPoint'
 
 export interface ButtonContainerProps {
   size: 'small' | 'medium' | 'large'
@@ -31,5 +32,10 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   }
   &:disabled {
     background: ${({ theme }) => theme.colors.button.disabled};
+  }
+
+  @media (max-width: ${TabletBreakPoint}) {
+    width: ${({ size }) => (size === 'medium' ? '480px' : '327px')};
+    padding: 1.6rem 2.4rem;
   }
 `

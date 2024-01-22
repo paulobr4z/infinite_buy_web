@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { MobileBreakPoint } from '../../const/breackPoint'
+import { MobileBreakPoint } from '../../const/breakPoint'
 
 export const BannerContainer = styled.div`
   display: flex;

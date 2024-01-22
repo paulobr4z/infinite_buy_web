@@ -24,7 +24,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   function InputComponent({ Icon, children, iconRight, ...props }, ref) {
     return (
-      <S.InputContainer>
+      <S.InputContainer size={'large'}>
         <Icon />
         <input ref={ref} {...props} />
         {iconRight && iconRight}
