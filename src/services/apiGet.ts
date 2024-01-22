@@ -21,3 +21,13 @@ export const getProductsPaginated = async ({
     console.log(error)
   }
 }
+
+export const cardProducts = async () => {
+  try {
+    const response = await api.get('products')
+    const { data } = response
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
