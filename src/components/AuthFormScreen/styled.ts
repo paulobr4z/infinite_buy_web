@@ -23,5 +23,9 @@ export const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .logo {
+      background-color: ${({ theme }) => theme.colors.white};
+    }
   }
 `

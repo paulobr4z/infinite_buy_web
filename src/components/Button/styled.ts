@@ -1,24 +1,10 @@
 import { styled } from 'styled-components'
 import { TabletBreakPoint } from '../../const/breakPoint'
-
-export interface ButtonContainerProps {
-  size: 'small' | 'medium' | 'large'
-}
-
-const sizeToPadding = {
-  small: '0.8rem 1.6rem',
-  medium: '0.8rem 3.2rem',
-  large: '1.6rem 0',
-}
-
-const sizeToWidth = {
-  small: 'auto',
-  medium: '19.5rem',
-  large: '48rem',
-}
+import { sizeToPadding, sizeToWidth } from '../../const/sizes'
+import { ButtonContainerProps } from '../../types'
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   font-weight: ${({ theme }) => theme.fonts.weight.semiBold};
   font-size: ${({ theme }) => theme.fonts.text.small};
   color: ${({ theme }) => theme.colors.text.light};

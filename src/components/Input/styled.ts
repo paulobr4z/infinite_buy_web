@@ -1,9 +1,6 @@
 import { styled } from 'styled-components'
 import { TabletBreakPoint } from '../../const/breakPoint'
-
-export interface InputContainerProps {
-  size: 'medium' | 'large'
-}
+import { InputContainerProps } from '../../types'
 
 export const InputContainer = styled.div<InputContainerProps>`
   background-color: ${({ theme }) => theme.colors.background};
