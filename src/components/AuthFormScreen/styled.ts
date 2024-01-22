@@ -26,6 +26,12 @@ export const ContentWrapper = styled.div`
 
     .logo {
       background-color: ${({ theme }) => theme.colors.white};
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      height: 200px;
+      align-items: flex-start;
+      padding-left: 2.4rem;
     }
   }
 `
