@@ -21,7 +21,6 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   }
 
   @media (max-width: ${TabletBreakPoint}) {
-    width: ${({ size }) => (size === 'medium' ? '480px' : '327px')};
-    padding: 1.6rem 2.4rem;
+    width: ${({ size }) => (size === 'small' ? '100%' : '100%')};
   }
 `

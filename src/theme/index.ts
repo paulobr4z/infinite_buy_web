@@ -5,6 +5,7 @@ export const theme: DefaultTheme = {
     background: '#DADADA',
     primary: '#00BEA0',
     secondary: '#52B69A',
+    headers: '#0E3C1F',
     emphasis: {
       main: '#E82535',
       error: '#FF0000',

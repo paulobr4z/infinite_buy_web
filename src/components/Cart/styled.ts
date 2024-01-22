@@ -1,41 +1,42 @@
 import { IoCloseSharp } from 'react-icons/io5'
 import styled from 'styled-components'
+import { TabletBreakPoint } from '../../const/breakPoint'
 
 export const TitleCart = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: inset -1px -5px 7px rgba(99, 99, 99, 0.2);
-  padding: 24px 32px;
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(99, 99, 99, 0.2);
+  padding: 2.4rem 3.2rem;
 
   h3 {
-    color: #0e3c1f;
+    color: ${({ theme }) => theme.colors.headers};
     font-size: ${({ theme }) => theme.fonts.text.large};
     font-weight: ${({ theme }) => theme.fonts.weight.bold};
   }
 `
 export const ClosedIcon = styled(IoCloseSharp)`
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  color: ${({ theme }) => theme.colors.headers};
+  width: 2.4rem;
+  height: 2.4rem;
 `
 
 export const EmptyCartContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 2.5rem;
 `
 
 export const CartItens = styled.div`
-  background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 2rem;
 `
 export const EmptyCart = styled.p`
-  font-size: 14px;
-  font-weight: 700;
+  font-size: ${({ theme }) => theme.fonts.text.small};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
 `
 
 export const CartContent = styled.div`
@@ -47,37 +48,37 @@ export const CardProduct = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  border-bottom: 1px solid rgba(99, 99, 99, 0.2);
+  border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
 
   li {
     display: flex;
-    height: 108px;
-    gap: 22px;
+    height: 10.8rem;
+    gap: 2.2rem;
     align-items: center;
-    border-bottom: 1px solid rgba(99, 99, 99, 0.2);
+    border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
   }
 
   img {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    border: 1px solid rgba(99, 99, 99, 0.2);
-    padding: 8px;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 1.6rem;
+    border: 0.1rem solid rgba(99, 99, 99, 0.2);
+    padding: 0.8rem;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${TabletBreakPoint}) {
     img {
-      width: 50px;
-      height: 50px;
+      width: 5rem;
+      height: 5rem;
     }
   }
 `
 export const InfoProducts = styled.div`
   display: flex;
-  gap: 22px;
+  gap: 2.2rem;
 
   h2 {
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.fonts.text.small};
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -86,66 +87,69 @@ export const InfoProducts = styled.div`
 
 export const TitleCartProducts = styled.h3`
   display: flex;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.fonts.text.small};
 
-  @media (max-width: 700px) {
-    font-size: 10px;
+  @media (max-width: ${TabletBreakPoint}) {
+    font-size: ${({ theme }) => theme.fonts.text.extraSmall};
   }
 `
 export const DescriptionAmount = styled.div`
-  width: 400px;
+  width: 40rem;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
 
-  @media (max-width: 700px) {
-    width: 240px;
+  @media (max-width: ${TabletBreakPoint}) {
+    width: 24rem;
   }
 `
 export const Description = styled.span`
-  color: #636363;
-  font-size: 12px;
+  color: ${({ theme }) => theme.colors.text.secondaryAccent};
+  font-size: ${({ theme }) => theme.fonts.text.extraSmall};
 
-  @media (max-width: 700px) {
-    font-size: 10px;
+  @media (max-width: ${TabletBreakPoint}) {
+    font-size: ${({ theme }) => theme.fonts.text.errorSize};
   }
 `
 export const Amount = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
 
   span {
-    font-size: 15px;
-    width: 24px;
+    font-size: ${({ theme }) => theme.fonts.text.small};
+    width: 2.4rem;
     text-align: center;
   }
 
-  @media (max-width: 700px) {
-    gap: 4px;
+  @media (max-width: ${TabletBreakPoint}) {
+    gap: 0.4rem;
     span {
-      font-size: 11px;
-      width: 15px;
+      font-size: ${({ theme }) => theme.fonts.text.errorSize};
+      width: 1.5rem;
     }
   }
 `
 export const Total = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 10px;
-  font-size: 16px;
-  font-weight: 700;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
+
+  position: fixed;
+  bottom: 0;
 
   p {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: ${({ theme }) => theme.fonts.text.medium};
+    font-weight: ${({ theme }) => theme.fonts.weight.bold};
     display: flex;
     justify-content: space-between;
   }
 
   span {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: ${({ theme }) => theme.fonts.text.medium};
+    font-weight: ${({ theme }) => theme.fonts.weight.bold};
   }
 `

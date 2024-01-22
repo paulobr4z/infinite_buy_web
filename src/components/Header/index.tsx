@@ -21,11 +21,11 @@ export const Header = () => {
   const { productsCart } = useContext(CartContext)
   const { user, isAuthenticated } = useAuthContext()
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true)
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false)
   }
 

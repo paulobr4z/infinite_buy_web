@@ -8,19 +8,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   iconRight?: ReactNode
 }
 
-// export const Input: React.FC<InputProps> = (
-//   { Icon, children, ...props },
-//   ref,
-// ) => {
-//   return (
-//     <S.InputContainer>
-//       <Icon />
-//       <input ref={ref} {...props} />
-//       {children}
-//     </S.InputContainer>
-//   )
-// }
-
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   function InputComponent({ Icon, children, iconRight, ...props }, ref) {
     return (

@@ -69,7 +69,7 @@ export const Cart: React.FC = () => {
             </p>
 
             <div>
-              <Button size="medium">Finalizar Compra</Button>
+              <Button size="large">Finalizar Compra</Button>
             </div>
           </S.Total>
         </S.CartContent>

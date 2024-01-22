@@ -21,7 +21,7 @@ export const ResponsiveHeader = () => {
     setIsOpen(true)
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false)
   }
 
