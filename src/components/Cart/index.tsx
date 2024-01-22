@@ -5,6 +5,7 @@ import { FiPlusSquare, FiMinusSquare } from 'react-icons/fi'
 
 import * as S from './styled'
 import { Button } from '../Button'
+import { formatCurrency } from '../../utils/formatCurrency'
 
 export const Cart: React.FC = () => {
   const contextoCarrinho = useContext(CartContext)
@@ -41,7 +42,9 @@ export const Cart: React.FC = () => {
                 <S.InfoProducts>
                   <div>
                     <S.TitleCartProducts>{produto.name}</S.TitleCartProducts>
-                    <S.TitleCartProducts>R${produto.price}</S.TitleCartProducts>
+                    <S.TitleCartProducts>
+                      {formatCurrency(produto.price)}
+                    </S.TitleCartProducts>
                     <S.DescriptionAmount>
                       <S.Description>{produto.description}</S.Description>
 

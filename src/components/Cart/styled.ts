@@ -59,18 +59,11 @@ export const CardProduct = styled.ul`
   }
 
   img {
-    width: 6.4rem;
-    height: 6.4rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 1.6rem;
     border: 0.1rem solid rgba(99, 99, 99, 0.2);
     padding: 0.8rem;
-  }
-
-  @media (max-width: ${TabletBreakPoint}) {
-    img {
-      width: 5rem;
-      height: 5rem;
-    }
   }
 `
 export const InfoProducts = styled.div`
@@ -79,9 +72,10 @@ export const InfoProducts = styled.div`
 
   h2 {
     font-size: ${({ theme }) => theme.fonts.text.small};
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    max-width: 45ch;
   }
 `
 
@@ -97,6 +91,7 @@ export const DescriptionAmount = styled.div`
   width: 40rem;
   display: flex;
   justify-content: space-between;
+  gap: 0.8rem;
   cursor: pointer;
 
   @media (max-width: ${TabletBreakPoint}) {
@@ -106,6 +101,10 @@ export const DescriptionAmount = styled.div`
 export const Description = styled.span`
   color: ${({ theme }) => theme.colors.text.secondaryAccent};
   font-size: ${({ theme }) => theme.fonts.text.extraSmall};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 45ch;
 
   @media (max-width: ${TabletBreakPoint}) {
     font-size: ${({ theme }) => theme.fonts.text.errorSize};
@@ -137,7 +136,6 @@ export const Total = styled.div`
   padding: 1rem;
   font-size: 1.6rem;
   font-weight: ${({ theme }) => theme.fonts.weight.bold};
-
   position: fixed;
   bottom: 0;
 
