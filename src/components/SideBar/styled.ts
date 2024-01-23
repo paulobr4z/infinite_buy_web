@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const ContentSideBar = styled.section`
   width: 300px;
   height: 100vh;
-  background-color: red;
-
+  padding: 24px 32px;
   ul {
     display: flex;
     flex-direction: column;
