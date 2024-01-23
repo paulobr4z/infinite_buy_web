@@ -1,19 +1,22 @@
 import { api } from './api'
 
 export type PaginatedProps = {
-  page: number
-  perPage: number
+  page?: number
+  perPage?: number
+  category?: string
 }
 
 export const getProductsPaginated = async ({
   page,
   perPage,
+  category,
 }: PaginatedProps) => {
   try {
     const response = await api.get('/products', {
       params: {
         page,
         perPage,
+        category,
       },
     })
     return response.data
@@ -22,11 +25,12 @@ export const getProductsPaginated = async ({
   }
 }
 
-export const cardProducts = async () => {
+export const getCategories = async () => {
   try {
-    const response = await api.get('products')
-    const { data } = response
-    return data
+    const response = await api.get('/categories/products')
+    console.log('Categoria response aqui', response)
+
+    return response.data
   } catch (error) {
     console.log(error)
   }
