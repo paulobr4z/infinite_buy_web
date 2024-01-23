@@ -82,6 +82,7 @@ export const InfoProducts = styled.div`
 export const TitleCartProducts = styled.h3`
   display: flex;
   font-size: ${({ theme }) => theme.fonts.text.small};
+  font-weight: ${({ theme }) => theme.fonts.weight.bold};
 
   @media (max-width: ${TabletBreakPoint}) {
     font-size: ${({ theme }) => theme.fonts.text.extraSmall};

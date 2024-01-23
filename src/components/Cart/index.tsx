@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ProductsProps } from '../../types'
 import { FiPlusSquare, FiMinusSquare } from 'react-icons/fi'
-
 import * as S from './styled'
 import { Button } from '../Button'
 import { formatCurrency } from '../../utils/formatCurrency'
@@ -30,8 +29,9 @@ export const Cart: React.FC = () => {
       {productsCart.length === 0 ? (
         <S.EmptyCartContent>
           <S.EmptyCart>Seu carrinho está vazio</S.EmptyCart>
-
-          <Button size="medium">Ir para produtos</Button>
+          {/* <Link to={routes.home}>
+            <Button size="medium">Ir para produtos</Button>
+          </Link> */}
         </S.EmptyCartContent>
       ) : (
         <S.CartContent>
