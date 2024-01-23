@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
 
 ::-webkit-scrollbar-thumb {
 width: 1rem ;
-background-color: ${({ theme }) => theme.colors.black} ;
+background-color: ${({ theme }) => theme.colors.secondary} ;
 border-radius: 0.6rem;
 }
 `
