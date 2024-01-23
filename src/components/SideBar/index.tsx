@@ -1,43 +1,47 @@
-import { string } from 'yup'
+import { useEffect, useState } from 'react'
 import { ButtonCategorie } from '../ButtonCategorie'
 import { Category, ContentSideBar } from './styled'
-import { getProductsCategory } from '../../services/apiGet'
+import { getCategories } from '../../services/apiGet'
+
+interface CategoriesProps {
+  id: string
+  name: string
+  description: string
+  created_at: string
+}
 
 export const SideBar = () => {
-  const getCategories = async () => {
+  const [categories, setCategories] = useState<CategoriesProps[]>([])
+
+  const getCategoriesResponse = async () => {
     try {
-      const responseCategories = await getProductsCategory()
-      console.log('CAtegotias aqui ', responseCategories)
+      const responseCategories = await getCategories()
+      setCategories(responseCategories)
     } catch (error) {
       console.error(error)
     }
   }
 
-  getCategories()
+  console.log('CAyegories', categories)
+
+  useEffect(() => {
+    getCategoriesResponse()
+  }, [])
+
+  const click = (index: number) => {
+    console.log('index :', categories[index].name)
+  }
+
   return (
     <ContentSideBar>
       <ul>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
-        <Category>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </Category>
+        {categories.map((categoria, index) => (
+          <Category key={categoria.id}>
+            <ButtonCategorie size="small" onClick={() => click(index)}>
+              {categoria.name}
+            </ButtonCategorie>
+          </Category>
+        ))}
       </ul>
     </ContentSideBar>
   )
