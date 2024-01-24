@@ -14,6 +14,7 @@ export interface ProductsContextProps {
   setPagination: (pagination: PaginationProps) => void
   pageArray: number[]
   setPageArray: (pageArray: number[]) => void
+  getPaginated: (categoryId?: string) => void
 }
 
 export const ProductsContext = createContext<ProductsContextProps>(
@@ -51,13 +52,18 @@ export const ProductsProvider = ({
     )
   }
 
-  const getPaginated = async () => {
+  const getPaginated = async (category?: string) => {
     try {
       setLoading(true)
+
+      if (category === 'allProducts') {
+        category = undefined
+      }
 
       const response = await getProductsPaginated({
         page: currentPage,
         perPage: 15,
+        category,
       })
 
       setPagination(response.pagination)
@@ -94,6 +100,7 @@ export const ProductsProvider = ({
         setPagination,
         pageArray,
         setPageArray,
+        getPaginated,
       }}
     >
       {children}
