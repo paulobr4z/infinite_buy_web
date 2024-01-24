@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { ButtonCategorie } from '../ButtonCategorie'
 import { Category, ContentSideBar } from './styled'
 import { getCategories } from '../../services/apiGet'
+import { useProductsContext } from '../../context/ProductsContext'
 
 interface CategoriesProps {
-  id: string
+  _id: string
   name: string
   description: string
   created_at: string
@@ -22,22 +23,33 @@ export const SideBar = () => {
     }
   }
 
-  console.log('CAyegories', categories)
-
   useEffect(() => {
     getCategoriesResponse()
   }, [])
 
-  const click = (index: number) => {
-    console.log('index :', categories[index].name)
+  const { getPaginated } = useProductsContext()
+
+  const handleGetCategory = (category: string) => {
+    getPaginated(category)
   }
 
   return (
     <ContentSideBar>
       <ul>
-        {categories.map((categoria, index) => (
-          <Category key={categoria.id}>
-            <ButtonCategorie size="small" onClick={() => click(index)}>
+        <Category>
+          <ButtonCategorie
+            size="small"
+            onClick={() => handleGetCategory('allProducts')}
+          >
+            Todas Produtos
+          </ButtonCategorie>
+        </Category>
+        {categories.map((categoria) => (
+          <Category key={categoria._id}>
+            <ButtonCategorie
+              size="small"
+              onClick={() => handleGetCategory(categoria.name)}
+            >
               {categoria.name}
             </ButtonCategorie>
           </Category>
