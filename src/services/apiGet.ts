@@ -11,6 +11,10 @@ export const getProductsPaginated = async ({
   perPage,
   category,
 }: PaginatedProps) => {
+  if (category) {
+    page = 1
+  }
+
   try {
     const response = await api.get('/products', {
       params: {
@@ -28,7 +32,6 @@ export const getProductsPaginated = async ({
 export const getCategories = async () => {
   try {
     const response = await api.get('/categories/products')
-    console.log('Categoria response aqui', response)
 
     return response.data
   } catch (error) {
