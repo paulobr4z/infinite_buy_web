@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { ButtonCategorie } from '../ButtonCategorie'
-import { Category, ContentSideBar } from './styled'
+import * as S from './styled'
 import { getCategories } from '../../services/apiGet'
 import { useProductsContext } from '../../context/ProductsContext'
+import { CircularSpinner } from '../CircularSpinner'
+import { capitalize } from '../../utils/capitalize'
 
-interface CategoriesProps {
+export interface CategoriesProps {
   _id: string
   name: string
   description: string
@@ -12,14 +14,18 @@ interface CategoriesProps {
 }
 
 export const SideBar = () => {
+  const { getPaginated, setLoading, loading } = useProductsContext()
   const [categories, setCategories] = useState<CategoriesProps[]>([])
 
   const getCategoriesResponse = async () => {
     try {
+      setLoading(true)
       const responseCategories = await getCategories()
       setCategories(responseCategories)
     } catch (error) {
       console.error(error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -27,34 +33,40 @@ export const SideBar = () => {
     getCategoriesResponse()
   }, [])
 
-  const { getPaginated } = useProductsContext()
-
   const handleGetCategory = (category: string) => {
     getPaginated(category)
   }
 
   return (
-    <ContentSideBar>
+    <S.ContentSideBar>
       <ul>
-        <Category>
-          <ButtonCategorie
-            size="small"
-            onClick={() => handleGetCategory('allProducts')}
-          >
-            Todas Produtos
-          </ButtonCategorie>
-        </Category>
-        {categories.map((categoria) => (
-          <Category key={categoria._id}>
-            <ButtonCategorie
-              size="small"
-              onClick={() => handleGetCategory(categoria.name)}
-            >
-              {categoria.name}
-            </ButtonCategorie>
-          </Category>
-        ))}
+        {loading ? (
+          <S.Loading>
+            <CircularSpinner cor="green" />
+          </S.Loading>
+        ) : (
+          <>
+            <S.Category>
+              <ButtonCategorie
+                size="small"
+                onClick={() => handleGetCategory('allProducts')}
+              >
+                Todas Produtos
+              </ButtonCategorie>
+            </S.Category>
+            {categories.map((categoria) => (
+              <S.Category key={categoria._id}>
+                <ButtonCategorie
+                  size="small"
+                  onClick={() => handleGetCategory(categoria.name)}
+                >
+                  {capitalize(categoria.name)}
+                </ButtonCategorie>
+              </S.Category>
+            ))}
+          </>
+        )}
       </ul>
-    </ContentSideBar>
+    </S.ContentSideBar>
   )
 }
