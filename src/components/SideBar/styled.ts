@@ -18,3 +18,9 @@ export const Category = styled.li`
   font-weight: 600;
   line-height: normal;
 `
+
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`
