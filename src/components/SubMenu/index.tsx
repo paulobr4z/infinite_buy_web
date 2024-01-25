@@ -2,14 +2,19 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import * as S from './styled'
 import { ButtonCategorie } from '../ButtonCategorie'
 import Modal from 'react-modal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { customStylesModalCategories } from '../../const/customStylesModal'
 import { ClosedIcon } from '../Cart/styled'
-import { SideBar } from '../SideBar'
+import { CategoriesProps, SideBar } from '../SideBar'
+import { getCategories } from '../../services/apiGet'
+import { useProductsContext } from '../../context/ProductsContext'
+import { capitalize } from '../../utils/capitalize'
 Modal.setAppElement('#root')
 
 export const SubMenu = () => {
   const [modalIsOpen, setIsOpen] = useState(false)
+  const { getPaginated, setLoading } = useProductsContext()
+  const [categories, setCategories] = useState<CategoriesProps[]>([])
 
   const openModal = () => {
     setIsOpen(true)
@@ -17,6 +22,28 @@ export const SubMenu = () => {
 
   const closeModal = () => {
     setIsOpen(false)
+  }
+
+  const getCategoriesResponse = async () => {
+    try {
+      setLoading(true)
+      const responseCategories = await getCategories()
+      setCategories(responseCategories)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getCategoriesResponse()
+  }, [])
+
+  const subMenuCategories = categories.slice(0, 5)
+
+  const handleGetCategory = (category: string) => {
+    getPaginated(category)
   }
 
   return (
@@ -43,21 +70,17 @@ export const SubMenu = () => {
             Ver todas categorias
           </ButtonCategorie>
         </li>
-        <li>
-          <ButtonCategorie size="small">Ofertas</ButtonCategorie>
-        </li>
-        <li>
-          <ButtonCategorie size="small">Hortfruti</ButtonCategorie>
-        </li>
-        <li>
-          <ButtonCategorie size="small">Açougue</ButtonCategorie>
-        </li>
-        <li>
-          <ButtonCategorie size="small">Bebidas</ButtonCategorie>
-        </li>
-        <li>
-          <ButtonCategorie size="small">Favoritos</ButtonCategorie>
-        </li>
+
+        {subMenuCategories.map((categoria) => (
+          <li key={categoria._id}>
+            <ButtonCategorie
+              size="small"
+              onClick={() => handleGetCategory(categoria.name)}
+            >
+              {capitalize(categoria.name)}
+            </ButtonCategorie>
+          </li>
+        ))}
       </S.Lista>
     </S.Nav>
   )
