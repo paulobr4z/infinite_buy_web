@@ -8,7 +8,11 @@ import { CartContext } from '../../../context/CartContext'
 import Modal from 'react-modal'
 import { ClosedIcon, TitleCart } from '../../Cart/styled'
 import { Cart } from '../../Cart'
-import { customStylesModalCartResponsive } from '../../../const/customStylesModal'
+import {
+  customStylesModalCartResponsive,
+  customStylesModalMenu,
+} from '../../../const/customStylesModal'
+import { MenuHambuerguer } from '../../MenuHamburguer'
 Modal.setAppElement('#root')
 
 // import { RxCross2 } from "react-icons/rx";
@@ -16,13 +20,21 @@ Modal.setAppElement('#root')
 export const ResponsiveHeader = () => {
   const { productsCart } = useContext(CartContext)
   const [modalIsOpen, setIsOpen] = useState(false)
-
+  const [modalMenuIsOpen, setModalMenuIsOpen] = useState(false)
   const openModal = () => {
     setIsOpen(true)
   }
 
   function closeModal() {
     setIsOpen(false)
+  }
+
+  const openModalMenu = () => {
+    setModalMenuIsOpen(true)
+  }
+
+  const closeModalMenu = () => {
+    setModalMenuIsOpen(false)
   }
 
   return (
@@ -42,9 +54,19 @@ export const ResponsiveHeader = () => {
             <Cart />
           </Modal>
         </div>
+
+        <Modal
+          isOpen={modalMenuIsOpen}
+          onRequestClose={closeModalMenu}
+          style={customStylesModalMenu}
+          contentLabel="Modal Cart"
+        >
+          <MenuHambuerguer />
+        </Modal>
+
         <div className="wrapper-menu">
           <S.ContentHeader>
-            <RxHamburgerMenu size="28" />
+            <RxHamburgerMenu size="28" onClick={openModalMenu} />
 
             <S.Logo>
               <img src="logo-02.png" alt="Logo" />
