@@ -5,6 +5,7 @@ export const customStylesModalCart = {
     right: 0,
     bottom: 0,
     height: '100%',
+    minWidth: '480px',
     marginRight: 0,
     transform: 'none',
     border: 'none',

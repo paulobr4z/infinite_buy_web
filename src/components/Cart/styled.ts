@@ -49,6 +49,7 @@ export const CardProduct = styled.ul`
   flex-direction: column;
   align-items: space-between;
   border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
+  padding-bottom: 50px;
 
   li {
     display: flex;

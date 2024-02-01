@@ -29,9 +29,6 @@ export const Cart: React.FC = () => {
       {productsCart.length === 0 ? (
         <S.EmptyCartContent>
           <S.EmptyCart>Seu carrinho está vazio</S.EmptyCart>
-          {/* <Link to={routes.home}>
-            <Button size="medium">Ir para produtos</Button>
-          </Link> */}
         </S.EmptyCartContent>
       ) : (
         <S.CartContent>

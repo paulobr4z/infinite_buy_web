@@ -6,7 +6,7 @@ import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
 import Modal from 'react-modal'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Cart } from '../Cart'
 import * as S from './styled'
 import { ClosedIcon, TitleCart } from '../Cart/styled'
@@ -29,6 +29,11 @@ export const Header = () => {
     setIsOpen(false)
   }
 
+  useEffect(() => {
+    modalIsOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'initial')
+  }, [modalIsOpen])
   return (
     <S.Header>
       <div className="container">
