@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { ProductsProps } from '../../types'
 import { Card } from '../Card'
 import * as S from './styled'
-import { getProductsPaginated } from '../../services/apiGet'
 import { CircularSpinner } from '../CircularSpinner'
 import { Pagination } from '../Pagination'
 import { CartContext } from '../../context/CartContext'
+import { useProductsContext } from '../../context/ProductsContext'
 
 export interface PaginationProps {
   currentPage: number
@@ -18,66 +18,19 @@ export interface PaginationProps {
 
 export const CardContainer: React.FC = () => {
   const { addProductToCart } = useContext(CartContext)
-  const [products, setProducts] = useState<ProductsProps[]>([])
-  const [loading, setLoading] = useState(true)
-  const [currentPage, setCurrentPage] = useState<number>(1)
-  const [pagination, setPagination] = useState<PaginationProps>(
-    {} as PaginationProps,
-  )
 
-  const [pageArray, setPageArray] = useState<number[]>([1])
-
-  const slice = (pageArray2: number[]) => {
-    const windowSize = 5
-    const halfWindowSize = Math.floor(windowSize / 2)
-
-    if (currentPage <= halfWindowSize) {
-      return pageArray2.slice(0, windowSize)
-    }
-
-    if (currentPage >= pagination.totalPages - halfWindowSize) {
-      return pageArray2.slice(-windowSize)
-    }
-
-    return pageArray2.slice(
-      currentPage - halfWindowSize - 1,
-      currentPage + halfWindowSize,
-    )
-  }
-
-  const getPaginated = async () => {
-    try {
-      setLoading(true)
-
-      const response = await getProductsPaginated({
-        page: currentPage,
-        perPage: 15,
-      })
-
-      setPagination(response.pagination)
-      setProducts(response.data)
-      setPageArray(
-        slice(
-          Array.from(
-            { length: response.pagination.totalPages },
-            (_, i) => i + 1,
-          ),
-        ),
-      )
-    } catch (error) {
-      console.error('Erro ao buscar dados:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
+  const {
+    currentPage,
+    loading,
+    pageArray,
+    pagination,
+    products,
+    setCurrentPage,
+  } = useProductsContext()
 
   const handleBuyClick = (productId: ProductsProps) => {
     addProductToCart(productId)
   }
-
-  useEffect(() => {
-    getPaginated()
-  }, [currentPage])
 
   return (
     <div className="container">
