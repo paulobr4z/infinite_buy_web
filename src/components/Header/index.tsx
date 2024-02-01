@@ -19,7 +19,7 @@ export const Header = () => {
   const navigate = useNavigate()
   const [modalIsOpen, setIsOpen] = useState(false)
   const { productsCart } = useContext(CartContext)
-  const { user, isAuthenticated } = useAuthContext()
+  const { user, isAuthenticated, setIsAuthenticated } = useAuthContext()
 
   function openModal() {
     setIsOpen(true)
@@ -27,6 +27,11 @@ export const Header = () => {
 
   function closeModal() {
     setIsOpen(false)
+  }
+
+  const LogOut = () => {
+    localStorage.clear()
+    setIsAuthenticated(false)
   }
 
   return (
@@ -53,9 +58,18 @@ export const Header = () => {
 
           <Search />
 
-          <Button size="small" onClick={() => navigate(routes.login)}>
-            {isAuthenticated ? user?.name : 'Entrar'}
-          </Button>
+          {isAuthenticated ? (
+            <Button size="small" onClick={LogOut}>
+              <S.ContentUser>
+                <p>{user?.name}</p>
+                <S.LogOut />
+              </S.ContentUser>
+            </Button>
+          ) : (
+            <Button size="small" onClick={() => navigate(routes.login)}>
+              Entrar
+            </Button>
+          )}
 
           <S.Cart>
             <PiShoppingCartFill onClick={openModal} />
