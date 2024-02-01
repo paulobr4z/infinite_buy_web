@@ -12,7 +12,11 @@ import {
   customStylesModalCartResponsive,
   customStylesModalMenu,
 } from '../../../const/customStylesModal'
-import { MenuHambuerguer } from '../../MenuHamburguer'
+import { SideBar } from '../../SideBar'
+import { Link } from 'react-router-dom'
+import { routes } from '../../../routes'
+import { useAuthContext } from '../../../context/AuthContext'
+
 Modal.setAppElement('#root')
 
 // import { RxCross2 } from "react-icons/rx";
@@ -21,6 +25,7 @@ export const ResponsiveHeader = () => {
   const { productsCart } = useContext(CartContext)
   const [modalIsOpen, setIsOpen] = useState(false)
   const [modalMenuIsOpen, setModalMenuIsOpen] = useState(false)
+  const { user, isAuthenticated, setIsAuthenticated } = useAuthContext()
   const openModal = () => {
     setIsOpen(true)
   }
@@ -35,6 +40,11 @@ export const ResponsiveHeader = () => {
 
   const closeModalMenu = () => {
     setModalMenuIsOpen(false)
+  }
+
+  const LogOut = () => {
+    localStorage.clear()
+    setIsAuthenticated(false)
   }
 
   return (
@@ -59,9 +69,37 @@ export const ResponsiveHeader = () => {
           isOpen={modalMenuIsOpen}
           onRequestClose={closeModalMenu}
           style={customStylesModalMenu}
-          contentLabel="Modal Cart"
+          contentLabel="Modal Menu Hamburguer"
         >
-          <MenuHambuerguer />
+          <S.HeaderMenuHamburguer>
+            <S.ContentMenu>
+              <S.ContentInfo>
+                <S.ContentInfoUser>
+                  <S.RegUserCircle />
+                  <S.ContentDescriptions>
+                    <h3>Bem vindo!</h3>
+
+                    {isAuthenticated ? (
+                      <>
+                        <S.ContentUser>
+                          <p>{user?.name}</p>
+                          <S.LogOut onClick={LogOut} />
+                        </S.ContentUser>
+                      </>
+                    ) : (
+                      <p>
+                        <Link to={routes.login}>Entre</Link> ou{' '}
+                        <Link to={routes.signup}>Cadastre-se</Link>
+                      </p>
+                    )}
+                  </S.ContentDescriptions>
+                </S.ContentInfoUser>
+
+                <S.ClosedIcon onClick={closeModalMenu} />
+              </S.ContentInfo>
+            </S.ContentMenu>
+          </S.HeaderMenuHamburguer>
+          <SideBar />
         </Modal>
 
         <div className="wrapper-menu">
