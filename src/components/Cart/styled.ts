@@ -32,7 +32,6 @@ export const EmptyCartContent = styled.div`
 export const CartItens = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 `
 export const EmptyCart = styled.p`
   font-size: ${({ theme }) => theme.fonts.text.small};
@@ -42,14 +41,15 @@ export const EmptyCart = styled.p`
 export const CartContent = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  padding: 2rem;
+  max-height: calc(100vh - 190px);
 `
 export const CardProduct = styled.ul`
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
-  padding-bottom: 50px;
 
   li {
     display: flex;
