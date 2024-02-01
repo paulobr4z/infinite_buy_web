@@ -3,20 +3,17 @@ import styled from 'styled-components'
 export const ContentSideBar = styled.section`
   width: 300px;
   height: 100vh;
-  padding: 24px 32px;
+  padding: 2.4rem 0;
   ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
 `
 
 export const Category = styled.li`
   color: #636363;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
+  padding: 0.8rem 2.4rem;
 `
 
 export const Loading = styled.div`
