@@ -36,3 +36,43 @@ export const customStylesModalCartResponsive = {
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
 }
+
+export const customStylesModalCategories = {
+  content: {
+    top: 0,
+    left: 0,
+    right: 'auto',
+    bottom: 0,
+    height: '100%',
+    marginLeft: 0,
+    transform: 'none',
+    border: 'none',
+    overflowY: 'auto' as const,
+    backgroundColor: 'white',
+    padding: 0,
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+}
+
+export const customStylesModalMenu = {
+  content: {
+    maxWidth: '300px',
+    top: 0,
+    left: 0,
+    right: 'auto',
+    bottom: 0,
+    height: '100%',
+    marginLeft: 0,
+    transform: 'none',
+    border: 'none',
+    overflowY: 'auto' as const,
+    overflowX: 'hidden' as const,
+    backgroundColor: 'white',
+    padding: 0,
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+}
