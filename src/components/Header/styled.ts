@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { BiLogOut } from 'react-icons/bi'
 export const Header = styled.header`
   display: flex;
   align-items: center;
@@ -45,4 +45,20 @@ export const ContentHeader = styled.div`
 
 export const ContentSubMenu = styled.div`
   height: 4.8rem;
+`
+
+export const ContentUser = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  p {
+    font-size: 1.5rem;
+  }
+`
+export const LogOut = styled(BiLogOut)`
+  cursor: pointer;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: ${({ theme }) => theme.colors.white};
 `
