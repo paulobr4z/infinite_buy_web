@@ -37,8 +37,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (userData) {
       setUser(JSON.parse(userData))
     }
-
-    console.log(userData, 'Dados do usuario no context')
   }, [])
 
   return (

@@ -38,10 +38,13 @@ export const Cart: React.FC = () => {
                 <img src={produto.images} alt="produto" />
                 <S.InfoProducts>
                   <div>
-                    <S.TitleCartProducts>{produto.name}</S.TitleCartProducts>
-                    <S.TitleCartProducts>
-                      {formatCurrency(produto.price)}
-                    </S.TitleCartProducts>
+                    <S.WrapperNamePrice>
+                      <S.TitleCartProducts>{produto.name}</S.TitleCartProducts>
+                      <S.TitleCartProducts>
+                        {formatCurrency(produto.price)}
+                      </S.TitleCartProducts>
+                    </S.WrapperNamePrice>
+
                     <S.DescriptionAmount>
                       <S.Description>{produto.description}</S.Description>
 

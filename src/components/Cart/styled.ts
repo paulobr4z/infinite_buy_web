@@ -26,7 +26,9 @@ export const ClosedIcon = styled(IoCloseSharp)`
 export const EmptyCartContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2.5rem;
+  margin-top: 4.8rem;
 `
 
 export const CartItens = styled.div`
@@ -67,21 +69,25 @@ export const CardProduct = styled.ul`
     padding: 0.8rem;
   }
 `
+
+export const WrapperNamePrice = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
 export const InfoProducts = styled.div`
   display: flex;
   gap: 2.2rem;
 
   h2 {
     font-size: ${({ theme }) => theme.fonts.text.small};
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 45ch;
+    max-width: 45px;
   }
 `
 
 export const TitleCartProducts = styled.h3`
   display: flex;
+  max-width: 27rem;
   font-size: ${({ theme }) => theme.fonts.text.small};
   font-weight: ${({ theme }) => theme.fonts.weight.bold};
 
