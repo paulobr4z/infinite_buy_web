@@ -19,8 +19,6 @@ Bem-vindo ao Infinity Buy.
 - [Executando o Projeto WEB Localmente](#executando-o-projeto-web-localmente)
 - [Deixe Sugestões e Ideias](#deixe-sugest%C3%B5es-e-ideias)
 
-
-
 ## Status do Projeto
 
       Projeto em construção
@@ -35,7 +33,9 @@ O Infinity Buy é um sistema de e-commerce voltado inicialmente para supermercad
 
 #### Autenticação:
 
-         Em Produção!
+- **Login:** Permite que os usuários autentiquem-se utilizando seu email e senha cadastrados previamente.
+- **Cadastro:** Permite que novos usuários se cadastrem na plataforma fornecendo informações como nome, email e senha.
+- **Recuperação de Senha ( Em Produção ):** Recurso que permitirá que usuários solicitem a recuperação de sua senha por meio do envio de um email com instruções para redefinição de senha.
 
 #### Home:
 
@@ -52,23 +52,65 @@ O Infinity Buy é um sistema de e-commerce voltado inicialmente para supermercad
 
 ### 🔒 Área do Usuário logado (Consumidor):
 
-         Em Produção !
+> Os usuários logados têm acesso a todas as funcionalidades disponíveis para os usuários não logados e mais:
+
+- **Navegação Completa:** Os consumidores logados têm acesso total a todas as áreas da plataforma, incluindo navegação por categorias de produtos, visualização de detalhes de produtos e ofertas, e acesso ao carrinho de compras.
+
+- **Adicionar ao Carrinho:** Os consumidores podem adicionar itens desejados ao seu carrinho de compras para facilitar o processo de compra posteriormente.
+
+- **Finalizar Compras:** Os usuários logados têm a capacidade de finalizar suas compras, revisar os itens no carrinho e proceder ao processo de pagamento para concluir suas transações.
+
+- **Perfil do Usuário (Em Produção):** Os consumidores terão a possibilidade de visualizar seu perfil, incluindo informações pessoais, histórico de compras e outras configurações relacionadas à conta.
+
+Além disso, os consumidores também podem desfrutar de funcionalidades adicionais, como histórico de compras, gerenciamento de perfil e configurações de conta.
 
 #### Carrinho:
 
-         Em Produção !
+> A seção do carrinho é essencial para a experiência de compra do usuário. Aqui estão algumas das funcionalidades que estarão disponíveis:
+
+- **Visualização de Itens Adicionados:** Os usuários podem verificar todos os itens que adicionaram ao seu carrinho, incluindo detalhes como nome do produto, quantidade e preço.
+
+- **Acréscimo de Quantidade:** Os consumidores têm a capacidade de aumentar a quantidade de um item no carrinho, caso desejem comprar mais unidades do mesmo produto.
+
+- **Diminuição de Quantidade:** Da mesma forma, os usuários podem diminuir a quantidade de um item no carrinho, caso desejem comprar menos unidades do produto.
+
+- **Remoção de Itens:** Os consumidores podem remover itens do carrinho, caso decidam não comprar mais aquele produto.
+
+- **Finalização da Compra (Em Produção):** Após revisar e ajustar os itens no carrinho, os usuários podem proceder à finalização da compra, onde serão direcionados para o processo de pagamento e conclusão da transação.
+
+Essas funcionalidades garantem que os usuários tenham controle total sobre os itens que desejam comprar e oferecem uma experiência de compra conveniente e personalizada.
+
+## Futuras Implementações
+
+- **Tela de Produto:** Implementação de uma tela dedicada para a exibição detalhada de cada produto, incluindo imagens, descrição, preço e outras informações relevantes.
+
+- **Recuperação de Senha:** Desenvolvimento de um sistema que permita aos usuários recuperar suas senhas por meio de um processo seguro e confiável, geralmente envolvendo o envio de um e-mail com instruções para redefinição de senha.
+
+- **Painel do Administrador:** Implementação de um painel de controle destinado aos administradores da plataforma. O painel do administrador fornecerá acesso a uma série de funcionalidades, incluindo:
+
+  - Cadastro de produto: Permitirá aos administradores adicionar novos produtos ao catálogo da loja, incluindo informações como nome, descrição, preço, imagens, etc.
+  
+  - Controle de estoque: Funcionalidade para gerenciar o estoque de produtos, incluindo monitoramento de quantidades disponíveis, alertas de estoque baixo e atualizações de estoque.
+
+  - Exclusão de produto: Capacidade de remover produtos do catálogo da loja, caso não sejam mais vendidos ou estejam fora de linha.
+
+  - Alteração de preço: Funcionalidade para alterar os preços dos produtos conforme necessário, permitindo ajustes sazonais ou promocionais.
+
+  - Lançamento de promoções: Recurso para criar e gerenciar promoções e descontos especiais em produtos selecionados ou categorias específicas.
+
+Essas futuras implementações estão planejadas para expandir e aprimorar a funcionalidade da plataforma Infinity Buy, oferecendo mais recursos tanto para os usuários quanto para os administradores.
 
 ## Guia de Padronização
 
 - Será usado versão 18 do node;
 - Nomes de variáveis e funções devem seguir o padrão camelCase;
-- Valores imutáveis devem seguir o pradrão SNAKE_UPPERCASE_WITH;
+- Valores imutáveis devem seguir o padrão SNAKE_UPPERCASE_WITH;
 - Apenas um component react por arquivo, sem uso de export default;
 - Arquivos e pastas devem seguir o padrão camelCase;
 - Components devem estar numa pasta com o nome do component em PascalCase;
-- A pasta do componente terá: index.tsx - arquivo do componente, styled.ts - syled-component, component.test.ts - arquivo de teste;
+- A pasta do componente terá: index.tsx - arquivo do componente, styled.ts - styled-component, component.test.ts - arquivo de teste;
 - Quando o componente necessitar de mais de uma tipagem, colocar as tipagens num arquivo chamado types.ts dentro da pasta do componente;
-- Tipagem de props deve seguir o padrao ComponentNameProps;
+- Tipagem de props deve seguir o padrão ComponentNameProps;
 - Todos os arquivos deverão estar nas suas devidas pastas, conforme está estruturado o repositório;
 - Todo o código-fonte deve ser escrito em inglês. Isso inclui nomes de variáveis, funções, classes, etc;
 
@@ -90,33 +132,42 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 
 ## Bibliotecas de Apoio
 
-    axios": 1.5.1
-    react": 18.2.0
+    react-hook-form: 3.3.4
+    styled-components: 5.1.29
+    axios: 1.5.1
+    react: 18.2.0
     react-dom": 18.2.0
-    react-icons": 4.11.0
+    react-hook-form": 7.49.3
+    react-icons": 4.12.0
+    react-modal": 3.16.1
     react-responsive": 9.0.2
-    react-router-dom": 6.17.0
+    react-router-dom": 6.21.0
+    react-toastify": 10.0.0
     styled-components": 6.1.0
+    yup": 1.3.3
 
 ## Ferramentas
 
       - NPM
       - Git
       - Gitflow
+      - Trello
+
+## Fluxo de Trabalho
+
+> https://trello.com/b/qeOyoqTS/infinitebuyweb
 
 ## Aplicação
 
-## Telas
+### Telas
 
-      Em Produção.
-
-<!-- <p align="center">
-  <img src="" alt="" width="350">
-</p> -->
+<p align="center">
+  <img src="public/telas-aplicacao.gif" alt="Telas da Aplicação" width="700">
+</p>
 
 ## Deploy
 
- >https://infinite-buy.vercel.app/
+> https://infinite-buy.vercel.app/
 
 ## Desenvolvedores
 
@@ -127,7 +178,7 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
         <img src="https://avatars.githubusercontent.com/u/114251625?s=96&v=4" width="120px;" alt="Foto de Karine"/><br>
           <b> Karine Pereira da Silva </b><br>
           <b> Desenvolvedora Web Frontend </b><br>
-            <a href="https://www.linkedin.com/in/devkarine/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
+            <a href="https://www.linkedin.com/in/devkarine/" alt="LinkedIn"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
             <a href="https://github.com/devkarine" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
   </tr>
@@ -140,7 +191,7 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
          <img src="https://avatars.githubusercontent.com/u/110488969?v=4" width="120px;" alt="Foto de Kelvin"/><br>
           <b>Kelvin Charles da Cruz</b><br>
           <b> Desenvolvedor Web Frontend</b><br>
-            <a href="https://www.linkedin.com/in/kelvin-charles/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
+            <a href="https://www.linkedin.com/in/kelvin-charles/" alt="LinkedIn"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
          <a href="https://github.com/kelvincharlesdev" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
   </tr>
@@ -151,14 +202,12 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
         <img src="https://avatars.githubusercontent.com/u/52705622?v=4" width="120px;" alt="Foto de PaULO"/><br>
           <b> Paulo Braz</b><br>
           <b> Desenvolvedor Web Fullstack. </b><br>
-            <a href="https://www.linkedin.com/in/paulobr4z/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
+            <a href="https://www.linkedin.com/in/paulobr4z/" alt="LinkedIn"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/ height="20"></a>
              <a href="https://github.com/paulobr4z" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
 
   </tr>
 
 </table>
-
-
 
 ## Executando o projeto web localmente
 
@@ -187,11 +236,3 @@ Utilizei alguns conceitos e ferramentas para padronizar várias etapas do projet
 - Formata código corretamente
 
   > npm run format
-
-  
-
-## Deixe Sugestões e Ideias
-
-    -
-
-

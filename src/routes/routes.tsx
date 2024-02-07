@@ -4,6 +4,7 @@ import { Signup } from '../pages/Signup'
 import { Login } from '../pages/Login'
 import { Home } from '../pages/Home'
 import { AuthFormScreen } from '../components/AuthFormScreen'
+import { RecoverPassword } from '../pages/RecoverPassword'
 
 export const InfinitBuyRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const InfinitBuyRoutes = () => {
         <Route element={<AuthFormScreen />}>
           <Route path={routes.login} element={<Login />} />
           <Route path={routes.signup} element={<Signup />} />
+          <Route path={routes.recoverPassword} element={<RecoverPassword />} />
         </Route>
       </Routes>
     </BrowserRouter>
