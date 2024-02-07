@@ -103,7 +103,9 @@ export const Login = () => {
         <Button size="large" type="submit">
           {loading ? <CircularSpinner cor={'white'} /> : 'Entrar'}
         </Button>
-        <a href="#">Recuperar senha </a>
+        <p>
+          <Link to={routes.recoverPassword}>Recuperar senha</Link>
+        </p>
       </Form>
     </>
   )
