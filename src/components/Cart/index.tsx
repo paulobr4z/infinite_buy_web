@@ -22,6 +22,7 @@ export const Cart: React.FC = () => {
         return total + (produto.amount || 1) * produto.price
       }, 0)
       .toFixed(2)
+      .replace('.', ',')
   }
 
   return (
@@ -66,17 +67,18 @@ export const Cart: React.FC = () => {
               </li>
             ))}
           </S.CardProduct>
-          <S.Total>
-            <p>
-              Total: <span>R${calculateTotal(productsCart)}</span>
-            </p>
-
-            <div>
-              <Button size="large">Finalizar Compra</Button>
-            </div>
-          </S.Total>
         </S.CartContent>
       )}
+
+      <S.Total>
+        <p>
+          Total: <span>R$ {calculateTotal(productsCart)}</span>
+        </p>
+
+        <div>
+          <Button size="large">Finalizar Compra</Button>
+        </div>
+      </S.Total>
     </S.CartItens>
   )
 }

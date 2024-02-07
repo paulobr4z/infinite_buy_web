@@ -34,6 +34,8 @@ export const EmptyCartContent = styled.div`
 export const CartItens = styled.div`
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 75px);
+  justify-content: space-between;
 `
 export const EmptyCart = styled.p`
   font-size: ${({ theme }) => theme.fonts.text.small};
@@ -49,14 +51,16 @@ export const CartContent = styled.div`
 `
 export const CardProduct = styled.ul`
   height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: space-between;
 
   li {
     display: flex;
+    width: 328px;
     height: 10.8rem;
-    gap: 2.2rem;
+    gap: 1rem;
     align-items: center;
     border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
   }
@@ -140,11 +144,11 @@ export const Amount = styled.div`
 export const Total = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 100%;
   gap: 1rem;
   padding: 1rem;
   font-size: 1.6rem;
   font-weight: ${({ theme }) => theme.fonts.weight.bold};
-  position: fixed;
   bottom: 0;
 
   p {
