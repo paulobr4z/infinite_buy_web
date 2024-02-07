@@ -80,6 +80,26 @@ Além disso, os consumidores também podem desfrutar de funcionalidades adiciona
 
 Essas funcionalidades garantem que os usuários tenham controle total sobre os itens que desejam comprar e oferecem uma experiência de compra conveniente e personalizada.
 
+## Futuras Implementações
+
+- **Tela de Produto:** Implementação de uma tela dedicada para a exibição detalhada de cada produto, incluindo imagens, descrição, preço e outras informações relevantes.
+
+- **Recuperação de Senha:** Desenvolvimento de um sistema que permita aos usuários recuperar suas senhas por meio de um processo seguro e confiável, geralmente envolvendo o envio de um e-mail com instruções para redefinição de senha.
+
+- **Painel do Administrador:** Implementação de um painel de controle destinado aos administradores da plataforma. O painel do administrador fornecerá acesso a uma série de funcionalidades, incluindo:
+
+  - Cadastro de produto: Permitirá aos administradores adicionar novos produtos ao catálogo da loja, incluindo informações como nome, descrição, preço, imagens, etc.
+  
+  - Controle de estoque: Funcionalidade para gerenciar o estoque de produtos, incluindo monitoramento de quantidades disponíveis, alertas de estoque baixo e atualizações de estoque.
+
+  - Exclusão de produto: Capacidade de remover produtos do catálogo da loja, caso não sejam mais vendidos ou estejam fora de linha.
+
+  - Alteração de preço: Funcionalidade para alterar os preços dos produtos conforme necessário, permitindo ajustes sazonais ou promocionais.
+
+  - Lançamento de promoções: Recurso para criar e gerenciar promoções e descontos especiais em produtos selecionados ou categorias específicas.
+
+Essas futuras implementações estão planejadas para expandir e aprimorar a funcionalidade da plataforma Infinity Buy, oferecendo mais recursos tanto para os usuários quanto para os administradores.
+
 ## Guia de Padronização
 
 - Será usado versão 18 do node;
