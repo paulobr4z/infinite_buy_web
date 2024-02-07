@@ -58,7 +58,6 @@ export const CardProduct = styled.ul`
 
   li {
     display: flex;
-    width: 328px;
     height: 10.8rem;
     gap: 1rem;
     align-items: center;
