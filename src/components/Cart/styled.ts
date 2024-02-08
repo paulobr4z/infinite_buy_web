@@ -51,7 +51,6 @@ export const CartContent = styled.div`
 `
 export const CardProduct = styled.ul`
   height: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: space-between;
@@ -62,6 +61,7 @@ export const CardProduct = styled.ul`
     gap: 1rem;
     align-items: center;
     border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
+    padding: 12px 0;
   }
 
   img {
@@ -145,10 +145,14 @@ export const Total = styled.div`
   flex-direction: column;
   max-width: 100%;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 3rem;
   font-size: 1.6rem;
   font-weight: ${({ theme }) => theme.fonts.weight.bold};
   bottom: 0;
+
+  @media (max-width: ${TabletBreakPoint}) {
+    padding: 1rem 2.4rem;
+  }
 
   p {
     font-size: ${({ theme }) => theme.fonts.text.medium};

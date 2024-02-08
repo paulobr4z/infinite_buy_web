@@ -4,6 +4,9 @@ export const ContentSideBar = styled.section`
   width: 300px;
   height: 100vh;
   padding: 2.4rem 0;
+  overflow: auto;
+  max-height: calc(100vh - 75px);
+
   ul {
     display: flex;
     flex-direction: column;

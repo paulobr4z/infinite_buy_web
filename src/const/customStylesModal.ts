@@ -69,7 +69,6 @@ export const customStylesModalMenu = {
     transform: 'none',
     border: 'none',
     overflowY: 'auto' as const,
-    overflowX: 'hidden' as const,
     backgroundColor: 'white',
     padding: 0,
   },

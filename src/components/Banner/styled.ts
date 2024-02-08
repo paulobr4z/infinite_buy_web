@@ -6,7 +6,7 @@ export const BannerContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   img {
     width: 100%;

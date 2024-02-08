@@ -71,9 +71,11 @@ export const Header = () => {
               </S.ContentUser>
             </Button>
           ) : (
-            <Button size="small" onClick={() => navigate(routes.login)}>
-              Entrar
-            </Button>
+            <div>
+              <Button size="small" onClick={() => navigate(routes.login)}>
+                Entrar
+              </Button>
+            </div>
           )}
 
           <S.Cart>
