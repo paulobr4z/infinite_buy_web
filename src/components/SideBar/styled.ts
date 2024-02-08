@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { TabletBreakPoint } from '../../const/breakPoint'
 
 export const ContentSideBar = styled.section`
   width: 300px;
@@ -6,6 +7,10 @@ export const ContentSideBar = styled.section`
   padding: 2.4rem 0;
   overflow: auto;
   max-height: calc(100vh - 75px);
+
+  @media (max-width: ${TabletBreakPoint}) {
+    max-height: calc(100vh - 109px);
+  }
 
   ul {
     display: flex;

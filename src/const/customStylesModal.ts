@@ -59,7 +59,6 @@ export const customStylesModalCategories = {
 
 export const customStylesModalMenu = {
   content: {
-    maxWidth: '300px',
     top: 0,
     left: 0,
     right: 'auto',
