@@ -1,12 +1,12 @@
 import { styled } from 'styled-components'
-import { MobileBreakPoint } from '../../const/breackPoint'
+import { MobileBreakPoint } from '../../const/breakPoint'
 
 export const BannerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   img {
     width: 100%;

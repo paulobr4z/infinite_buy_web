@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({ children, size, loading, ...props }: ButtonProps) => {
   return (
     <S.ButtonContainer size={size} {...props}>
-      {loading ? <CircularSpinner /> : children}
+      {loading ? <CircularSpinner cor={'white'} /> : children}
     </S.ButtonContainer>
   )
 }

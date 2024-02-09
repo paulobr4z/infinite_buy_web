@@ -1,12 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react'
 import * as S from './styled'
-
-interface ButtonCategorieProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  size: 'small' | 'medium' | 'large'
-  color?: string
-  loading?: boolean
-  children?: ReactNode
-}
+import { ButtonCategorieProps } from '../../types'
 
 export const ButtonCategorie = ({
   size,
