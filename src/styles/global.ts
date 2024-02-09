@@ -27,6 +27,12 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0 5rem;
   }
+
+ @media (max-width: 1024px){
+    .container{
+      padding: 0 2.4rem;
+    }
+ }
   
   button {
     cursor: pointer;
@@ -47,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
 
 ::-webkit-scrollbar-thumb {
 width: 1rem ;
-background-color: ${({ theme }) => theme.colors.secondary} ;
+background-color: ${({ theme }) => theme.colors.primary} ;
 border-radius: 0.6rem;
 }
 `

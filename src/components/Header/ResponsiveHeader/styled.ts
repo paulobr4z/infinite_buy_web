@@ -21,17 +21,17 @@ export const Logo = styled.div``
 export const Cart = styled.button`
   position: relative;
   svg {
-    font-size: 3rem;
+    font-size: 3.6rem;
     color: #00988d;
   }
 `
 export const NumberContentCart = styled.div`
-  border-radius: 200px;
+  border-radius: 20rem;
   border: 1px solid #fff;
   background: #00988d;
   display: flex;
-  width: 13.5px;
-  height: 13.5px;
+  width: 1.8rem;
+  height: 1.8rem;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -41,7 +41,7 @@ export const NumberContentCart = styled.div`
 
   span {
     color: #fff;
-    font-size: 5px;
+    font-size: 1rem;
   }
 `
 

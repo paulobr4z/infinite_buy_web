@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as S from './styled'
 
-const promotionImages = [
-  '/promo1.png',
-  '/promo2.jpg',
-  '/promo3.png',
-  '/promo4.jpg',
-]
+const promotionImages = ['/promo1.png', '/promo4.jpg']
 
 export const Banner = () => {
   const [currentPromotionIndex, setCurrentPromotionIndex] = useState(0)

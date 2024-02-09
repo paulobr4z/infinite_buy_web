@@ -40,6 +40,12 @@ export const SubMenu = () => {
     getCategoriesResponse()
   }, [])
 
+  useEffect(() => {
+    modalIsOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'initial')
+  }, [modalIsOpen])
+
   const subMenuCategories = categories.slice(0, 5)
 
   const handleGetCategory = (category: string) => {

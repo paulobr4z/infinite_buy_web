@@ -5,6 +5,7 @@ export const customStylesModalCart = {
     right: 0,
     bottom: 0,
     height: '100%',
+    minWidth: '480px',
     marginRight: 0,
     transform: 'none',
     border: 'none',
@@ -58,7 +59,6 @@ export const customStylesModalCategories = {
 
 export const customStylesModalMenu = {
   content: {
-    maxWidth: '300px',
     top: 0,
     left: 0,
     right: 'auto',
@@ -68,7 +68,6 @@ export const customStylesModalMenu = {
     transform: 'none',
     border: 'none',
     overflowY: 'auto' as const,
-    overflowX: 'hidden' as const,
     backgroundColor: 'white',
     padding: 0,
   },

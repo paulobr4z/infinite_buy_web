@@ -6,7 +6,7 @@ import { Button } from '../Button'
 import { SubMenu } from '../SubMenu'
 import { Search } from '../Search'
 import Modal from 'react-modal'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Cart } from '../Cart'
 import * as S from './styled'
 import { ClosedIcon, TitleCart } from '../Cart/styled'
@@ -21,11 +21,11 @@ export const Header = () => {
   const { productsCart } = useContext(CartContext)
   const { user, isAuthenticated, setIsAuthenticated } = useAuthContext()
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true)
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false)
   }
 
@@ -34,6 +34,11 @@ export const Header = () => {
     setIsAuthenticated(false)
   }
 
+  useEffect(() => {
+    modalIsOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'initial')
+  }, [modalIsOpen])
   return (
     <S.Header>
       <div className="container">
@@ -66,9 +71,11 @@ export const Header = () => {
               </S.ContentUser>
             </Button>
           ) : (
-            <Button size="small" onClick={() => navigate(routes.login)}>
-              Entrar
-            </Button>
+            <div>
+              <Button size="small" onClick={() => navigate(routes.login)}>
+                Entrar
+              </Button>
+            </div>
           )}
 
           <S.Cart>

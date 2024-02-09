@@ -3,7 +3,7 @@ import * as S from './styled'
 import { Search } from '../../Search'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { SomaTotalCarrinho } from '../../../utils/somaTotalCarrinho'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import Modal from 'react-modal'
 import { ClosedIcon, TitleCart } from '../../Cart/styled'
@@ -30,7 +30,7 @@ export const ResponsiveHeader = () => {
     setIsOpen(true)
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false)
   }
 
@@ -46,6 +46,12 @@ export const ResponsiveHeader = () => {
     localStorage.clear()
     setIsAuthenticated(false)
   }
+
+  useEffect(() => {
+    modalIsOpen
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'initial')
+  }, [modalIsOpen])
 
   return (
     <S.Header>
@@ -120,8 +126,6 @@ export const ResponsiveHeader = () => {
         </div>
 
         <Search />
-
-        {/* <Button size="small">Entrar</Button> */}
       </div>
     </S.Header>
   )

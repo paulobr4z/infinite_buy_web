@@ -56,8 +56,6 @@ export const postRequestLogin = async ({ email, password }: LoginProps) => {
       password,
     })
 
-    console.log(response, 'Response dentro de POST')
-
     return response
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -70,7 +68,6 @@ export const postRequestLogin = async ({ email, password }: LoginProps) => {
         typeof errorMessage === 'object' &&
         'message' in errorMessage
       ) {
-        console.log('API Error Response:', errorMessage.message, 'AQUIIII')
         throw new Error(`${errorMessage.message}`)
       }
     }

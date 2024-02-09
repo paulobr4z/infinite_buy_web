@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ProductsProps } from '../../types'
 import { FiPlusSquare, FiMinusSquare } from 'react-icons/fi'
-
 import * as S from './styled'
 import { Button } from '../Button'
+import { formatCurrency } from '../../utils/formatCurrency'
 
 export const Cart: React.FC = () => {
   const contextoCarrinho = useContext(CartContext)
@@ -22,6 +22,7 @@ export const Cart: React.FC = () => {
         return total + (produto.amount || 1) * produto.price
       }, 0)
       .toFixed(2)
+      .replace('.', ',')
   }
 
   return (
@@ -29,8 +30,6 @@ export const Cart: React.FC = () => {
       {productsCart.length === 0 ? (
         <S.EmptyCartContent>
           <S.EmptyCart>Seu carrinho está vazio</S.EmptyCart>
-
-          <Button size="medium">Ir para produtos</Button>
         </S.EmptyCartContent>
       ) : (
         <S.CartContent>
@@ -40,8 +39,13 @@ export const Cart: React.FC = () => {
                 <img src={produto.images} alt="produto" />
                 <S.InfoProducts>
                   <div>
-                    <S.TitleCartProducts>{produto.name}</S.TitleCartProducts>
-                    <S.TitleCartProducts>R${produto.price}</S.TitleCartProducts>
+                    <S.WrapperNamePrice>
+                      <S.TitleCartProducts>{produto.name}</S.TitleCartProducts>
+                      <S.TitleCartProducts>
+                        {formatCurrency(produto.price)}
+                      </S.TitleCartProducts>
+                    </S.WrapperNamePrice>
+
                     <S.DescriptionAmount>
                       <S.Description>{produto.description}</S.Description>
 
@@ -63,17 +67,18 @@ export const Cart: React.FC = () => {
               </li>
             ))}
           </S.CardProduct>
-          <S.Total>
-            <p>
-              Total: <span>R${calculateTotal(productsCart)}</span>
-            </p>
-
-            <div>
-              <Button size="medium">Finalizar Compra</Button>
-            </div>
-          </S.Total>
         </S.CartContent>
       )}
+
+      <S.Total>
+        <p>
+          Total: <span>R$ {calculateTotal(productsCart)}</span>
+        </p>
+
+        <div>
+          <Button size="large">Finalizar Compra</Button>
+        </div>
+      </S.Total>
     </S.CartItens>
   )
 }
