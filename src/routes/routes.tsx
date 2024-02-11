@@ -5,8 +5,11 @@ import { Login } from '../pages/Login'
 import { Home } from '../pages/Home'
 import { AuthFormScreen } from '../components/AuthFormScreen'
 import { RecoverPassword } from '../pages/RecoverPassword'
+import { useAuthContext } from '../context/AuthContext'
 
 export const InfinitBuyRoutes = () => {
+  const { isAuthenticated } = useAuthContext()
+
   return (
     <BrowserRouter>
       <Routes>
@@ -14,7 +17,16 @@ export const InfinitBuyRoutes = () => {
         <Route path={routes.home} element={<Home />} />
 
         <Route element={<AuthFormScreen />}>
-          <Route path={routes.login} element={<Login />} />
+          <Route
+            path={routes.login}
+            element={
+              !isAuthenticated ? (
+                <Login />
+              ) : (
+                <Navigate replace to={routes.home} />
+              )
+            }
+          />
           <Route path={routes.signup} element={<Signup />} />
           <Route path={routes.recoverPassword} element={<RecoverPassword />} />
         </Route>
