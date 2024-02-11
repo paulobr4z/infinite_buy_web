@@ -19,8 +19,6 @@ import { useAuthContext } from '../../../context/AuthContext'
 
 Modal.setAppElement('#root')
 
-// import { RxCross2 } from "react-icons/rx";
-
 export const ResponsiveHeader = () => {
   const { productsCart } = useContext(CartContext)
   const [modalIsOpen, setIsOpen] = useState(false)
