@@ -64,12 +64,14 @@ export const Header = () => {
           <Search />
 
           {isAuthenticated ? (
-            <Button size="small" onClick={LogOut}>
-              <S.ContentUser>
-                <p>{user?.name}</p>
-                <S.LogOut />
-              </S.ContentUser>
-            </Button>
+            <div>
+              <Button size="small" onClick={LogOut}>
+                <S.ContentUser>
+                  <p>{user?.name}</p>
+                  <S.LogOut />
+                </S.ContentUser>
+              </Button>
+            </div>
           ) : (
             <div>
               <Button size="small" onClick={() => navigate(routes.login)}>

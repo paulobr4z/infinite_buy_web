@@ -41,6 +41,7 @@ export const ContentHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 8rem;
+  gap: 1.2rem;
 `
 
 export const ContentSubMenu = styled.div`
@@ -54,6 +55,7 @@ export const ContentUser = styled.div`
 
   p {
     font-size: 1.5rem;
+    white-space: nowrap;
   }
 `
 export const LogOut = styled(BiLogOut)`
