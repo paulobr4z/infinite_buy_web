@@ -19,8 +19,6 @@ import { useAuthContext } from '../../../context/AuthContext'
 
 Modal.setAppElement('#root')
 
-// import { RxCross2 } from "react-icons/rx";
-
 export const ResponsiveHeader = () => {
   const { productsCart } = useContext(CartContext)
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -48,10 +46,10 @@ export const ResponsiveHeader = () => {
   }
 
   useEffect(() => {
-    modalIsOpen
+    modalIsOpen || modalMenuIsOpen
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'initial')
-  }, [modalIsOpen])
+  }, [modalIsOpen, modalMenuIsOpen])
 
   return (
     <S.Header>
