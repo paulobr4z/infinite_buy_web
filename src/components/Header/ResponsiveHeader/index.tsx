@@ -46,10 +46,10 @@ export const ResponsiveHeader = () => {
   }
 
   useEffect(() => {
-    modalIsOpen
+    modalIsOpen || modalMenuIsOpen
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'initial')
-  }, [modalIsOpen])
+  }, [modalIsOpen, modalMenuIsOpen])
 
   return (
     <S.Header>
