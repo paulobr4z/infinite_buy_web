@@ -1,0 +1,29 @@
+.slick-arrow {
+    height: 100px;
+    width: 50px;
+  }
+  
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 50px;
+    opacity: 0.75;
+    color: var(--primary);
+  }
+  
+  .slick-slider .slick-list,
+  .slick-slider .slick-track {
+    display: flex;
+    align-items: center;
+    min-height: 350px;
+  }
+  
+  .slick-slider .slick-list,
+  .slick-slider .slick-track {
+    margin: 0 30px;
+  }
+  
+  .slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
