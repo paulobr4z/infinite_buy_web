@@ -1,25 +1,25 @@
 .slick-arrow {
-    height: 100px;
-    width: 50px;
+    height: 6.25rem;
+    width: 3.125rem;
   }
   
   .slick-next:before,
   .slick-prev:before {
-    font-size: 50px;
+    font-size: 3.125rem;
     opacity: 0.75;
-    color: var(--primary);
+    color: red;
   }
   
   .slick-slider .slick-list,
   .slick-slider .slick-track {
     display: flex;
     align-items: center;
-    min-height: 350px;
+    min-height: 21.875rem;
   }
   
   .slick-slider .slick-list,
   .slick-slider .slick-track {
-    margin: 0 30px;
+    margin: 0 1.875rem;
   }
   
   .slick-initialized .slick-slide {

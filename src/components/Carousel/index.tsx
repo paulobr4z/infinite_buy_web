@@ -1,12 +1,17 @@
-import { ReactNode } from 'react'
 import Slider from 'react-slick'
-import './styles.css'
+import './style.css'
+import { ProductsProps } from '../../types'
+import { Card } from '../Card'
 
-interface CarouselProps {
-  children: ReactNode
+interface ProductListProps {
+  listProductsData: ProductsProps[]
+  slidesToShow: number
 }
 
-export const Carousel = ({ children }: CarouselProps) => {
+export const Carousel = ({
+  listProductsData,
+  slidesToShow,
+}: ProductListProps) => {
   const settings = {
     dots: false,
     infinite: false,
@@ -14,7 +19,7 @@ export const Carousel = ({ children }: CarouselProps) => {
     centerMode: false,
     variableWidth: false,
     adaptiveHeight: false,
-    slidesToShow: 4,
+    slidesToShow,
     slidesToScroll: 1,
     responsive: [
       {
@@ -44,7 +49,9 @@ export const Carousel = ({ children }: CarouselProps) => {
   }
   return (
     <Slider className="slider" {...settings}>
-      {children}
+      {listProductsData.map((product) => (
+        <Card key={product._id} product={product} onBuyClick={() => {}} />
+      ))}
     </Slider>
   )
 }

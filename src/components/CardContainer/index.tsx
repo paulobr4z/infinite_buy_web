@@ -42,7 +42,13 @@ export const CardContainer: React.FC = () => {
         <>
           <S.TitleCards>Todos os Produtos</S.TitleCards>
           <S.ContainerCard>
-            <Card cardData={products} onBuyClick={handleBuyClick} />
+            {products.map((product) => (
+              <Card
+                key={product._id}
+                product={product}
+                onBuyClick={handleBuyClick}
+              />
+            ))}
           </S.ContainerCard>
 
           <Pagination
