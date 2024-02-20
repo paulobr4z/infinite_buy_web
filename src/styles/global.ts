@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     font-family: ${({ theme }) => theme.fonts.family.primary};
     font-weight: ${({ theme }) => theme.fonts.weight.light};
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
   }
 
 

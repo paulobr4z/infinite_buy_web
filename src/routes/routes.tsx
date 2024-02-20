@@ -6,6 +6,7 @@ import { Home } from '../pages/Home'
 import { AuthFormScreen } from '../components/AuthFormScreen'
 import { RecoverPassword } from '../pages/RecoverPassword'
 import { useAuthContext } from '../context/AuthContext'
+import { AdminPageLayout } from '../components/Admin/AdminPageLayout'
 
 export const InfinitBuyRoutes = () => {
   const { isAuthenticated } = useAuthContext()
@@ -29,6 +30,9 @@ export const InfinitBuyRoutes = () => {
           />
           <Route path={routes.signup} element={<Signup />} />
           <Route path={routes.recoverPassword} element={<RecoverPassword />} />
+        </Route>
+        <Route path={routes.admin} element={<AdminPageLayout />}>
+          <Route index element={<Navigate to={routes.dashboard} />} />
         </Route>
       </Routes>
     </BrowserRouter>
