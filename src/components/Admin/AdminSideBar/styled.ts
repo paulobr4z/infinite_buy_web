@@ -8,7 +8,7 @@ type AdminSideBarLogoProps = {
 export const AdminSideBarConteiner = styled.section`
   display: flex;
   flex-direction: column;
-  background: rgba(3, 3, 12, 1);
+  background-color: ${({ theme }) => theme.colors.sidebarBackground};
   font-size: 2rem;
   text-align: center;
   width: 12.5rem;
@@ -18,7 +18,7 @@ export const AdminSideBarConteiner = styled.section`
   transition: transform 0.5s ease-in-out;
 
   @media (max-width: ${MobileBreakPoint}) {
-    display: flex;
+    display: none;
   }
 `
 
