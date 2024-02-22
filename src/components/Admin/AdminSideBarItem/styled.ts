@@ -7,7 +7,7 @@ export const AdminSideBarItem = styled.li`
   width: 100%;
   height: 3.125rem;
   padding: 0.75rem 1.5rem 0.75rem 1.5rem;
-  color: ${(theme) => theme.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
   font-size: 0.875rem;
 

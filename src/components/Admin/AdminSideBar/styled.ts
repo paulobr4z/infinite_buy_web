@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { MobileBreakPoint } from '../../../const/breakPoint'
 
-type AdminSideBarLogoProps = {
+interface AdminSideBarLogoProps {
   image: string
 }
 

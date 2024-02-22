@@ -1,7 +1,7 @@
 import * as S from './styled'
 import { AdminSideBarList } from '../AdminSideBarList'
 
-type AdminSideBarProps = {
+interface AdminSideBarProps {
   onItemSelected: (item: string) => void
 }
 
