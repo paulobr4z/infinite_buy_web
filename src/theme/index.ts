@@ -17,6 +17,8 @@ export const theme: DefaultTheme = {
       categorie: '#0E3C1F',
     },
     iconColor: '#000',
+    hover: '#00BEA020',
+    sidebarBackground: '#03030C',
 
     text: {
       main: '#333333',
