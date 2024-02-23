@@ -33,16 +33,16 @@ export const theme: DefaultTheme = {
       primary: 'Roboto',
     },
     text: {
-      errorSize: '1rem',
-      extraSmall: '1.2rem',
-      small: '1.4rem',
-      medium: '1.6rem',
-      large: '1.8rem',
+      errorSize: '0.625rem',
+      extraSmall: '0.75rem',
+      small: '0.875rem',
+      medium: '1rem',
+      large: '1.125rem',
     },
     header: {
-      small: '2.2rem',
-      medium: '2.4rem',
-      large: '2.8rem',
+      small: '1.375rem',
+      medium: '1.5rem',
+      large: '1.75rem',
     },
 
     weight: {
