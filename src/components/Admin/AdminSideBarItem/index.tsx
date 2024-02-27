@@ -15,7 +15,7 @@ export const AdminSideBarItem = ({
   const match = useMatch(to)
   return (
     <Link to={to} onClick={onClick}>
-      <S.AdminSideBarItem className={match ? 'active' : ''}>
+      <S.AdminSideBarItem className={match ? 'active' : ''} role="menuitem">
         {name}
       </S.AdminSideBarItem>
     </Link>
