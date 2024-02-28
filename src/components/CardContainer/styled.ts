@@ -4,7 +4,7 @@ export const TitleCards = styled.h3`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fonts.header.medium};
   font-weight: ${({ theme }) => theme.fonts.weight.bold};
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 `
 
 export const Loading = styled.div`
@@ -17,6 +17,6 @@ export const ContainerCard = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5rem;
-  margin-top: 2.4rem;
+  gap: 3.125rem;
+  margin-top: 1.5rem;
 `

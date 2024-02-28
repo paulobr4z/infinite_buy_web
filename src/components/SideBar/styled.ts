@@ -2,14 +2,14 @@ import styled from 'styled-components'
 import { TabletBreakPoint } from '../../const/breakPoint'
 
 export const ContentSideBar = styled.section`
-  width: 300px;
+  width: 18.75rem;
   height: 100vh;
-  padding: 2.4rem 0;
+  padding: 1.5rem 0;
   overflow: auto;
-  max-height: calc(100vh - 75px);
+  max-height: calc(100vh - 4.6875rem);
 
   @media (max-width: ${TabletBreakPoint}) {
-    max-height: calc(100vh - 109px);
+    max-height: calc(100vh - 6.8125rem);
   }
 
   ul {
@@ -20,8 +20,8 @@ export const ContentSideBar = styled.section`
 
 export const Category = styled.li`
   color: #636363;
-  border-bottom: 0.1rem solid rgba(99, 99, 99, 0.2);
-  padding: 0.8rem 2.4rem;
+  border-bottom: 0.0625rem solid rgba(99, 99, 99, 0.2);
+  padding: 0.5rem 1.5rem;
 `
 
 export const Loading = styled.div`

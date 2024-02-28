@@ -19,8 +19,8 @@ export const Lista = styled.ul`
   }
 
   svg {
-    font-size: 2rem;
-    margin-right: 1.6rem;
+    font-size: 1.25rem;
+    margin-right: 1rem;
   }
 `
 
@@ -29,8 +29,8 @@ export const TitleCategories = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 0px 4px 8px 0px rgba(99, 99, 99, 0.2);
-  padding: 24px 32px;
+  box-shadow: 0rem 0.25rem 0.5rem 0rem rgba(99, 99, 99, 0.2);
+  padding: 1.5rem 2rem;
 
   h3 {
     color: #0e3c1f;

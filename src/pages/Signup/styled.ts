@@ -5,11 +5,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 1rem;
+  gap: 0.625rem;
 
   h2 {
     color: ${({ theme }) => theme.colors.text.primaryAccent};
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: ${({ theme }) => theme.fonts.weight.bold};
   }
 
@@ -28,6 +28,6 @@ export const Form = styled.form`
 
 export const ToastContainerStyled = styled(ToastContainer)`
   .Toastify__toast-body {
-    font-size: 16px;
+    font-size: 1rem;
   }
 `

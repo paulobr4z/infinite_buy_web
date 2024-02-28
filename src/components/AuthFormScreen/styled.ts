@@ -29,9 +29,9 @@ export const ContentWrapper = styled.div`
       width: 100%;
       display: flex;
       justify-content: flex-start;
-      height: 200px;
+      height: 12.5rem;
       align-items: flex-start;
-      padding-left: 2.4rem;
+      padding-left: 1.5rem;
     }
   }
 `

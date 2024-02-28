@@ -8,8 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     line-height: 1.5;
     font-family: ${({ theme }) => theme.fonts.family.primary};
-    font-weight: ${({ theme }) => theme.fonts.weight.light};
-    font-size: 62.5%;
+    font-weight: ${({ theme }) => theme.fonts.weight.light} ;
   }
 
 
@@ -25,12 +24,12 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 5rem;
+    padding: 0 3.125rem;
   }
 
  @media (max-width: 1024px){
     .container{
-      padding: 0 2.4rem;
+      padding: 0 1.5rem;
     }
  }
   
@@ -48,12 +47,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   ::-webkit-scrollbar {
-    width: 1rem ;
+    width: 0.625rem ;
   }
 
 ::-webkit-scrollbar-thumb {
-width: 1rem ;
+width: 0.625rem ;
 background-color: ${({ theme }) => theme.colors.primary} ;
-border-radius: 0.6rem;
+border-radius: 0.375rem;
 }
 `
