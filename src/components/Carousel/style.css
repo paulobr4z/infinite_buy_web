@@ -1,8 +1,15 @@
+.slick-slider,
+.slider,
+.slick-initial{
+  width: 500px;
+  overflow: cover;
+}
+
 .slick-arrow {
     height: 6.25rem;
     width: 3.125rem;
   }
-  
+
   .slick-next:before,
   .slick-prev:before {
     font-size: 3.125rem;
@@ -27,3 +34,14 @@
     justify-content: center;
     align-items: flex-start;
   }
+
+  .custom-arrow,
+  .custom-next-arrow,
+  .custom-prev-arrow{
+    font-size: 50px;
+    cursor: pointer;
+    opacity: 0.75;
+    color: red;
+  }
+
+ 
