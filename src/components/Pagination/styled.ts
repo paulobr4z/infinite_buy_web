@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const ContainerCarouselPagination = styled.div`
   display: flex;
   justify-content: center;
-  gap: 3.2rem;
-  margin: 4.8rem 0;
+  gap: 2rem;
+  margin: 3rem 0;
 `
 
 export const NumberButton = styled.button`

@@ -6,18 +6,18 @@ export const BannerContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 
   img {
     width: 100%;
-    max-height: 30rem;
+    max-height: 18.75rem;
   }
 
   @media (max-width: ${MobileBreakPoint}) {
-    margin-top: 2.5rem;
+    margin-top: 1.5625rem;
     img {
-      max-height: 20rem;
-      height: 10rem;
+      max-height: 12.5rem;
+      height: 6.25rem;
     }
   }
 `

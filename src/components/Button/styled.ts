@@ -3,7 +3,7 @@ import { sizeToPadding } from '../../const/sizes'
 import { ButtonContainerProps } from '../../types'
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
-  border-radius: 0.6rem;
+  border-radius: 0.375rem;
   font-weight: ${({ theme }) => theme.fonts.weight.semiBold};
   font-size: ${({ theme }) => theme.fonts.text.small};
   color: ${({ theme }) => theme.colors.text.light};

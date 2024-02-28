@@ -7,11 +7,11 @@ export const spin = keyframes`
 
 export const SpinnerContainer = styled.div`
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  border: 0.2rem solid;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid;
   border-color: ${({ theme }) => theme.colors.primary};
-  border-top: 0.4rem solid;
+  border-top: 0.25rem solid;
   border-top-color: ${({ theme }) => theme.colors.primary};
   border-radius: 50%;
   animation: ${spin} 1s linear infinite;

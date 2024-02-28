@@ -1,11 +1,11 @@
 export const sizeToPadding = {
-  small: '0.8rem 1.6rem',
-  medium: '0.8rem 3.2rem',
-  large: '1.6rem 0',
+  small: '0.5rem 1rem',
+  medium: '0.5rem 2rem',
+  large: '1rem 0',
 }
 
 export const sizeToWidth = {
   small: 'auto',
-  medium: '19.5rem',
-  large: '48rem',
+  medium: '12.1875rem',
+  large: '30rem',
 }
