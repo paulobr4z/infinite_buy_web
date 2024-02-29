@@ -9,13 +9,9 @@ import { CartContext } from '../../context/CartContext'
 
 interface ProductListProps {
   listProductsData: ProductsProps[]
-  slidesToShow: number
 }
 
-export const Carousel = ({
-  listProductsData,
-  slidesToShow
-}: ProductListProps) => {
+export const Carousel = ({ listProductsData }: ProductListProps) => {
   const { addProductToCart } = useContext(CartContext)
   const handleBuyClick = (productId: ProductsProps) => {
     addProductToCart(productId)
@@ -47,7 +43,8 @@ export const Carousel = ({
     centerMode: false,
     variableWidth: false,
     adaptiveHeight: false,
-    slidesToShow,
+    pagination: false,
+    slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,

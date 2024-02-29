@@ -11,7 +11,7 @@ export const Home = () => {
     <MainLayout>
       <Banner />
       <CardContainer />
-      <Carousel listProductsData={products} slidesToShow={4} />
+      <Carousel listProductsData={products} />
     </MainLayout>
   )
 }

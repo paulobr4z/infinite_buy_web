@@ -1,23 +1,16 @@
-.wrapper{
-  height: 500px;
-  width: 1040px;
-
-}
-
 .custom-arrow,
 .custom-next-arrow,
 .custom-prev-arrow {
   font-size: 30px;
   cursor: pointer;
   opacity: 0.75;
- 
 }
 
 .custom-arrow {
   position: absolute;
   bottom: 0;
   top: 50%;
-
+  z-index: 100000;
 }
 
 .custom-next-arrow {
