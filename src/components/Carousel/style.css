@@ -1,47 +1,47 @@
-.slick-slider,
-.slider,
-.slick-initial{
-  width: 500px;
-  overflow: cover;
+.wrapper{
+  height: 500px;
+  width: 1040px;
+
 }
 
-.slick-arrow {
-    height: 6.25rem;
-    width: 3.125rem;
-  }
-
-  .slick-next:before,
-  .slick-prev:before {
-    font-size: 3.125rem;
-    opacity: 0.75;
-    color: red;
-  }
-  
-  .slick-slider .slick-list,
-  .slick-slider .slick-track {
-    display: flex;
-    align-items: center;
-    min-height: 21.875rem;
-  }
-  
-  .slick-slider .slick-list,
-  .slick-slider .slick-track {
-    margin: 0 1.875rem;
-  }
-  
-  .slick-initialized .slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .custom-arrow,
-  .custom-next-arrow,
-  .custom-prev-arrow{
-    font-size: 50px;
-    cursor: pointer;
-    opacity: 0.75;
-    color: red;
-  }
-
+.custom-arrow,
+.custom-next-arrow,
+.custom-prev-arrow {
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.75;
  
+}
+
+.custom-arrow {
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+
+}
+
+.custom-next-arrow {
+  right: 0;
+}
+
+.slider {
+  position: relative;
+}
+
+.slick-slider .slick-list,
+.slick-slider .slick-track {
+  display: flex;
+  align-items: center;
+  min-height: 350px;
+}
+
+.slick-slider .slick-list,
+.slick-slider .slick-track {
+  margin: 0 30px;
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

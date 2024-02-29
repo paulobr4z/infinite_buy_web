@@ -14,7 +14,7 @@ interface ProductListProps {
 
 export const Carousel = ({
   listProductsData,
-  slidesToShow,
+  slidesToShow
 }: ProductListProps) => {
   const { addProductToCart } = useContext(CartContext)
   const handleBuyClick = (productId: ProductsProps) => {
@@ -42,7 +42,7 @@ export const Carousel = ({
   )
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 300,
     centerMode: false,
     variableWidth: false,
@@ -79,10 +79,16 @@ export const Carousel = ({
   }
 
   return (
-    <Slider className="slider" {...settings}>
-      {listProductsData.map((product) => (
-        <Card key={product._id} product={product} onBuyClick={handleBuyClick} />
-      ))}
-    </Slider>
+    <div className="wrapper">
+      <Slider className="slider" {...settings}>
+        {listProductsData.map((product) => (
+          <Card
+            key={product._id}
+            product={product}
+            onBuyClick={handleBuyClick}
+          />
+        ))}
+      </Slider>
+    </div>
   )
 }
