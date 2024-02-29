@@ -1,16 +1,24 @@
+.wrapper {
+  max-width: 100%;
+  position: relative;
+}
+
 .custom-arrow,
 .custom-next-arrow,
 .custom-prev-arrow {
-  font-size: 30px;
+  font-size: 29px;
   cursor: pointer;
   opacity: 0.75;
-}
-
-.custom-arrow {
   position: absolute;
-  bottom: 0;
   top: 50%;
+  bottom: 0;
   z-index: 100000;
+  background-color: aqua;
+  color: white;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  border-radius: 100%;
 }
 
 .custom-next-arrow {
@@ -18,7 +26,9 @@
 }
 
 .slider {
-  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .slick-slider .slick-list,
@@ -26,11 +36,7 @@
   display: flex;
   align-items: center;
   min-height: 350px;
-}
-
-.slick-slider .slick-list,
-.slick-slider .slick-track {
-  margin: 0 30px;
+  margin: 0 -30px;
 }
 
 .slick-initialized .slick-slide {
@@ -38,3 +44,4 @@
   justify-content: center;
   align-items: flex-start;
 }
+
