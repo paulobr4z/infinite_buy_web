@@ -1,6 +1,9 @@
 .wrapper {
-  max-width: 100%;
+  max-width: 1350px;
+  width: 100%;
   position: relative;
+  margin: 0 auto;
+  padding: 0 50px;
 }
 
 .custom-arrow,
@@ -8,12 +11,9 @@
 .custom-prev-arrow {
   font-size: 29px;
   cursor: pointer;
-  opacity: 0.75;
   position: absolute;
   top: 50%;
-  bottom: 0;
-  z-index: 100000;
-  background-color: aqua;
+  background-color: #00bea0;
   color: white;
   height: 35px;
   width: 35px;
@@ -22,13 +22,16 @@
 }
 
 .custom-next-arrow {
-  right: 0;
+  right: 8px;
+}
+
+.custom-prev-arrow {
+  left: 8px;
 }
 
 .slider {
   width: 100%;
   overflow: hidden;
-  padding: 10px;
 }
 
 .slick-slider .slick-list,
@@ -36,7 +39,6 @@
   display: flex;
   align-items: center;
   min-height: 350px;
-  margin: 0 -30px;
 }
 
 .slick-initialized .slick-slide {
@@ -44,4 +46,3 @@
   justify-content: center;
   align-items: flex-start;
 }
-
