@@ -1,0 +1,48 @@
+.wrapper {
+  max-width: 1350px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.custom-arrow,
+.custom-next-arrow,
+.custom-prev-arrow {
+  font-size: 29px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background-color: #00bea0;
+  color: white;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.custom-next-arrow {
+  right: 8px;
+}
+
+.custom-prev-arrow {
+  left: 8px;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slick-slider .slick-list,
+.slick-slider .slick-track {
+  display: flex;
+  align-items: center;
+  min-height: 350px;
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
