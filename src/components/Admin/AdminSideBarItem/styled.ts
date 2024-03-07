@@ -10,6 +10,7 @@ export const AdminSideBarItem = styled.li`
   color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
   font-size: 0.875rem;
+  font-weight: ${({ theme }) => theme.fonts.weight.semiBold};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.hover};
@@ -19,9 +20,5 @@ export const AdminSideBarItem = styled.li`
   &.active {
     background-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.text.light};
-  }
-
-  a {
-    font-weight: ${({ theme }) => theme.fonts.weight.semiBold};
   }
 `

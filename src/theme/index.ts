@@ -19,6 +19,7 @@ export const theme: DefaultTheme = {
     iconColor: '#000',
     hover: '#00BEA020',
     sidebarBackground: '#03030C',
+    modalBackground: '#00000060',
 
     text: {
       main: '#333333',
