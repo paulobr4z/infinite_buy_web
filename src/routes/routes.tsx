@@ -7,6 +7,7 @@ import { AuthFormScreen } from '../components/AuthFormScreen'
 import { RecoverPassword } from '../pages/RecoverPassword'
 import { useAuthContext } from '../context/AuthContext'
 import { AdminPageLayout } from '../components/Admin/AdminPageLayout'
+import { Profile } from '../pages/Profile'
 
 export const InfinitBuyRoutes = () => {
   const { isAuthenticated } = useAuthContext()
@@ -16,6 +17,7 @@ export const InfinitBuyRoutes = () => {
       <Routes>
         <Route path="/*" element={<Navigate replace to="/home" />} />
         <Route path={routes.home} element={<Home />} />
+        <Route path={routes.profile} element={<Profile />} />
 
         <Route element={<AuthFormScreen />}>
           <Route

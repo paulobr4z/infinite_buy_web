@@ -8,4 +8,5 @@ export const routes = {
   products: '/admin/products',
   users: '/admin/users',
   setup: '/admin/setup',
+  profile: '/profile',
 }
