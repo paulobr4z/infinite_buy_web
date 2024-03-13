@@ -20,6 +20,7 @@ export const theme: DefaultTheme = {
     hover: '#00BEA020',
     sidebarBackground: '#03030C',
     modalBackground: '#00000060',
+    cultured: '#f4f4f4',
 
     text: {
       main: '#333333',
