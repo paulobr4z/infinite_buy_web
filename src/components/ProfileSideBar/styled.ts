@@ -4,9 +4,8 @@ export const SideBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 360px;
-  min-height: 700px;
+  width: 360px;
+  height: 100%;
   background-color: #ffffff;
   border-radius: 10px;
   margin-top: 24px;
@@ -40,6 +39,7 @@ export const SideBarContainer = styled.div`
       padding: 32px;
       gap: 16px;
       border-bottom: 1px solid #dee2e6;
+      cursor: pointer;
 
       p {
         font-size: 18px;

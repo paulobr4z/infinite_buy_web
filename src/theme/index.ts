@@ -21,6 +21,7 @@ export const theme: DefaultTheme = {
     sidebarBackground: '#03030C',
     modalBackground: '#00000060',
     cultured: '#f4f4f4',
+    gainsboro: '#dedede',
 
     text: {
       main: '#333333',
