@@ -18,7 +18,7 @@ export const InputContainer = styled.div<InputContainerProps>`
     align-items: center;
     width: 100%;
     padding-bottom: 0.625rem;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.gainsboro};
+    border-bottom: 1px solid #dedede;
 
     input {
       width: 100%;
